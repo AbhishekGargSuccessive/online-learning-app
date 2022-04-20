@@ -190,6 +190,26 @@ const styles = (selectedTheme: any) =>
       flexDirection: 'row',
       justifyContent: 'space-between',
     },
+    classTypeItem: {
+      borderWidth: 0.5,
+      alignItems: 'center',
+      justifyContent: 'center',
+      flex: 1,
+      margin: 4,
+      borderRadius: 10,
+      height: Dimensions.get('window').width / 4,
+    },
+    icons: {
+      height: 40,
+      width: 40,
+      resizeMode: 'contain',
+      alignSelf: 'center',
+      tintColor: selectedTheme.tintColor,
+    },
+    itemText: {
+      fontSize: 14,
+      color: selectedTheme.textblackNwhite,
+    },
   });
 
 export default styles;

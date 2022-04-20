@@ -3,7 +3,6 @@ import CommonButton from './commonButton';
 import Header from './header';
 import Input from './input';
 import Label from './label';
-import Logo from './logo';
 import Modals from './modal';
 import MultiProgress from './multiProgress';
 import MultiSliders from './multiSlider';
@@ -16,7 +15,6 @@ export {
   Header,
   Input,
   Label,
-  Logo,
   Modals,
   MultiProgress,
   MultiSliders,

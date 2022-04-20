@@ -20,7 +20,7 @@ const Renderitem = (props: renderprops) => {
     <TouchableOpacity
       onPress={() => setdefaultitem(item.id)}
       style={[
-        styles(selectedTheme).classtypeitem,
+        styles(selectedTheme).classTypeItem,
         {
           backgroundColor:
             defaultitem == item.id
@@ -35,7 +35,7 @@ const Renderitem = (props: renderprops) => {
       <Image
         source={item.icon}
         style={[
-          styles(selectedTheme).Icons,
+          styles(selectedTheme).icons,
           {
             tintColor:
               defaultitem == item.id ? COLORS.white : selectedTheme.tintColor,
@@ -44,7 +44,7 @@ const Renderitem = (props: renderprops) => {
       />
       <Text
         style={[
-          styles(selectedTheme).itemtext,
+          styles(selectedTheme).itemText,
           {
             color:
               defaultitem == item.id

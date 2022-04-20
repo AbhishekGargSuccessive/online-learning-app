@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Modal, StyleSheet, Text, Pressable, View} from 'react-native';
-import Logo from '../logo';
 
 const Modals = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -17,7 +16,6 @@ const Modals = () => {
         <View style={{backgroundColor: 'rgba(0, 0, 255, 0.1)', flex: 1}}>
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Logo />
               <Text style={styles.modalText}> this is Modal</Text>
               <Pressable
                 style={[styles.button, styles.buttonClose]}
