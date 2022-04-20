@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {DummyData} from '../config';
 import {NavigationDataTypes} from '../models';
@@ -12,6 +12,12 @@ const Homemodel = (props: NavigationDataTypes) => {
   const {navigation} = props;
 
   const Userdata = useSelector<DefaultRootStat>(state => state.Data);
+
+  const [forceRednder,setForceRender]=useState(false);
+  useEffect(() => {
+    setForceRender(!forceRednder)
+  }, [Userdata])
+  
 
   const [seeall, setseeall] = useState(false);
   const [isfavourite, setisfavourite] = useState([]);
