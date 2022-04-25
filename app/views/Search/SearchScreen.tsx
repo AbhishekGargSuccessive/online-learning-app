@@ -2,6 +2,7 @@ import React from 'react';
 import {
   FlatList,
   Image,
+  SafeAreaView,
   ScrollView,
   Text,
   TextInput,
@@ -59,7 +60,7 @@ const SearchScreen = (props: SearchScreenProps) => {
   };
 
   return (
-    <View style={styles(selectedTheme).mainContainer}>
+    <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <View style={styles(selectedTheme).container}>
         <View style={styles(selectedTheme).searchBar}>
           <TouchableOpacity>
@@ -148,7 +149,7 @@ const SearchScreen = (props: SearchScreenProps) => {
           />
         )}
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -3,6 +3,7 @@ import {
   ActivityIndicator,
   Image,
   ImageBackground,
+  SafeAreaView,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -33,7 +34,7 @@ const CourseScreen = (props: coursescreenprops) => {
   } = props;
 
   return (
-    <View style={styles(selectedTheme).mainConatiner}>
+    <SafeAreaView style={styles(selectedTheme).mainConatiner}>
       <View style={styles(selectedTheme).videoContainer}>
         {playvideo ? (
           <ImageBackground
@@ -135,7 +136,7 @@ const CourseScreen = (props: coursescreenprops) => {
       <ScrollView horizontal={false} style={styles(selectedTheme).flex}>
         {Page()}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

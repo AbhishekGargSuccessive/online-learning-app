@@ -1,5 +1,12 @@
 import React, {memo} from 'react';
-import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
+import {
+  FlatList,
+  Image,
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {selectedTheme} from '../../config/Themes';
 import {buttons, Icon, screensData, Constant, RouteScreens} from '../../config';
 import Renderitem from './Renderitem';
@@ -17,7 +24,7 @@ const MembershipScreen = (props: CategoryProps) => {
   const {navigation, visible, setvisibe, defaultitem, setdefaultitem} = props;
 
   return (
-    <View style={styles(selectedTheme).mainContainer}>
+    <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <View style={styles(selectedTheme).headContentContainer}>
         <View style={styles(selectedTheme).header}>
           <TouchableOpacity
@@ -69,7 +76,7 @@ const MembershipScreen = (props: CategoryProps) => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

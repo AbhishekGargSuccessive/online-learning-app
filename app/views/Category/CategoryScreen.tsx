@@ -1,5 +1,12 @@
 import React, {memo} from 'react';
-import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
+import {
+  FlatList,
+  Image,
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {selectedTheme} from '../../config/Themes';
 import {Icon, Constant, screensData, buttons, RouteScreens} from '../../config';
 import Renderitem from './Renderitem';
@@ -18,7 +25,7 @@ const CategoryScreen = (props: CategoryProps) => {
     props;
 
   return (
-    <View style={styles(selectedTheme).mainConatiner}>
+    <SafeAreaView style={styles(selectedTheme).mainConatiner}>
       <View style={styles(selectedTheme).container}>
         <TouchableOpacity
           style={styles(selectedTheme).leftButton}
@@ -63,7 +70,7 @@ const CategoryScreen = (props: CategoryProps) => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

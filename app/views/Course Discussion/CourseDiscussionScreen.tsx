@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, SafeAreaView, Text, View} from 'react-native';
 import {selectedTheme} from '../../config/Themes';
 import {Icon, screensData} from '../../config';
 import {discussionsDataModel} from '../../models';
@@ -13,7 +13,7 @@ interface Coursediscussionprops {
 const CourseDiscussionScreen = (props: Coursediscussionprops) => {
   const {Data, navigation} = props;
   return (
-    <View style={styles(selectedTheme).mainContainer}>
+    <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <View style={styles(selectedTheme).textContainer}>
         <Image source={Data[0].profile} style={styles(selectedTheme).icon} />
         <View style={styles(selectedTheme).subContainer}>
@@ -84,7 +84,7 @@ const CourseDiscussionScreen = (props: Coursediscussionprops) => {
           );
         })}
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

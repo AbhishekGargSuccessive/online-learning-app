@@ -8,6 +8,7 @@ import {
   ScrollView,
   Modal,
   Animated,
+  SafeAreaView,
 } from 'react-native';
 import {MultiSliders} from '../../components';
 import {COLORS, selectedTheme} from '../../config/Themes';
@@ -92,7 +93,7 @@ const CourseListingScreen = (props: Corselistingprops) => {
   });
 
   return (
-    <View style={styles(selectedTheme).mainContainer}>
+    <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <Animated.View
         style={{
           transform: [{translateY: translateY}],
@@ -112,7 +113,10 @@ const CourseListingScreen = (props: Corselistingprops) => {
           </TouchableOpacity>
           <View style={styles(selectedTheme).headerSub}>
             <Text style={styles(selectedTheme).headerText}>{Header}</Text>
-            <Image source={Icon.MOBILE} style={styles(selectedTheme).mobileImage} />
+            <Image
+              source={Icon.MOBILE}
+              style={styles(selectedTheme).mobileImage}
+            />
           </View>
         </View>
       </Animated.View>
@@ -307,7 +311,7 @@ const CourseListingScreen = (props: Corselistingprops) => {
           </View>
         </View>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 };
 export default memo(CourseListingScreen);

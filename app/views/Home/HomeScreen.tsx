@@ -7,6 +7,7 @@ import {
   ScrollView,
   ImageBackground,
   Animated,
+  SafeAreaView,
 } from 'react-native';
 import {selectedTheme} from '../../config/Themes';
 import {buttons, Icon, Images, RouteScreens, screensData} from '../../config';
@@ -87,7 +88,7 @@ const HomeScreen = (props: Homepageprops) => {
     outputRange: ['-20deg', '20deg', '0deg'],
   });
   return (
-    <View style={styles(selectedTheme).Container}>
+    <SafeAreaView style={styles(selectedTheme).Container}>
       <View style={styles(selectedTheme).MainSubContainer}>
         <View style={styles(selectedTheme).headercontainer}>
           <View>
@@ -247,7 +248,7 @@ const HomeScreen = (props: Homepageprops) => {
           </ScrollView>
         </ScrollView>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 export default memo(HomeScreen);

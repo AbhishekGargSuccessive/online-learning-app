@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {COLORS, FONTS, selectedTheme} from '../../config/Themes';
+import {selectedTheme} from '../../config/Themes';
 import {RouteScreens, screensData} from '../../config';
 import styles from './style';
 

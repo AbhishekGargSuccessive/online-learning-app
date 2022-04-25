@@ -1,5 +1,12 @@
 import React, {memo} from 'react';
-import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  SafeAreaView,
+} from 'react-native';
 import {selectedTheme} from '../../config/Themes';
 import {
   buttons,
@@ -41,7 +48,7 @@ const LoginScreen = (props: loginpageprops) => {
   } = props;
 
   return (
-    <View style={styles(selectedTheme).mainContainer}>
+    <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <Image
         source={selectedTheme.name == 'light' ? Images.BG : Images.BG_DARK}
         style={styles(selectedTheme).bgImage}
@@ -130,7 +137,7 @@ const LoginScreen = (props: loginpageprops) => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 export default memo(LoginScreen);

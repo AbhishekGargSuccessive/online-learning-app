@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Image,
   Linking,
+  SafeAreaView,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -60,7 +61,7 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
   } = props;
 
   return (
-    <View style={styles(selectedTheme).mainContainer}>
+    <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <View style={styles(selectedTheme).headContentContainer}>
         <View style={styles(selectedTheme).header}>
           <TouchableOpacity
@@ -279,7 +280,7 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
           </View>
         </ScrollView>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

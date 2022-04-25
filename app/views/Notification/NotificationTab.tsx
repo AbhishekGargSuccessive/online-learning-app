@@ -1,5 +1,12 @@
 import React, {memo} from 'react';
-import {Text, View, SectionList, Image, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  SectionList,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import {selectedTheme} from '../../config/Themes';
 import {Icon, Images, screensData} from '../../config';
 import RenderItems from './Renderitem';
@@ -22,7 +29,7 @@ interface NotificationTabprops {
 const NotificationTab = (props: NotificationTabprops) => {
   const {DATA, navigation} = props;
   return (
-    <View style={styles(selectedTheme).mainContainer}>
+    <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <Image
         source={selectedTheme.name == 'light' ? Images.BG : Images.BG_DARK}
         style={styles(selectedTheme).bgImage}
@@ -50,7 +57,7 @@ const NotificationTab = (props: NotificationTabprops) => {
           )}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 export default memo(NotificationTab);

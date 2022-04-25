@@ -57,17 +57,17 @@ const styles = (selectedTheme: any) =>
     headingText: {
       ...FONTS.heading,
       color: selectedTheme.textblackNwhite,
-      fontSize: 30,
-      width: 200,
-      fontWeight: '700',
+      fontSize: 38,
+      ...FONTS.largeTitle,
     },
     textStyle: {
       ...FONTS.body,
-      marginTop: SIZES.base,
+      marginTop: SIZES.padding,
       color: selectedTheme.textblackNwhite,
     },
     itemContainer: {
       padding: 20,
+      marginTop: SIZES.padding,
     },
     buttonContainer: {
       flexDirection: 'row',

@@ -1,5 +1,12 @@
 import React, {memo} from 'react';
-import {Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import {selectedTheme} from '../../config/Themes';
 import {buttons, Icon, Images, RouteScreens, screensData} from '../../config';
 import {courseDetailsModel} from '../../models';
@@ -30,7 +37,7 @@ const CourseChapterScreen = (props: Corselistingprops) => {
   const {DATA, navigation, flatlistdata, Title, isfavourite, setisfavourite} =
     props;
   return (
-    <View style={styles(selectedTheme).mainContainer}>
+    <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <View style={styles(selectedTheme).conatiner}>
         <View style={styles(selectedTheme).headerContainer}>
           <Text style={styles(selectedTheme).userTitle}>{Title}</Text>
@@ -130,7 +137,7 @@ const CourseChapterScreen = (props: Corselistingprops) => {
           })}
         </ScrollView>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 export default memo(CourseChapterScreen);

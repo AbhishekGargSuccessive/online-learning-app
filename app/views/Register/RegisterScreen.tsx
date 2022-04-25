@@ -8,6 +8,7 @@ import {
   ScrollView,
   StatusBar,
   Animated,
+  SafeAreaView,
 } from 'react-native';
 import {buttons, form, Icon, RouteScreens, screensData} from '../../config';
 import {COLORS, selectedTheme} from '../../config/Themes';
@@ -73,7 +74,7 @@ const RegisterScreen = (props: Registerprops) => {
   };
 
   return (
-    <View style={styles(selectedTheme).mainConatainer}>
+    <SafeAreaView style={styles(selectedTheme).mainConatainer}>
       <StatusBar backgroundColor={'rgba(0,0,0,0)'} barStyle={'dark-content'} />
 
       <Text style={styles(selectedTheme).heading}>{screensData.REGISTER}</Text>
@@ -253,7 +254,7 @@ const RegisterScreen = (props: Registerprops) => {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 export default RegisterScreen;

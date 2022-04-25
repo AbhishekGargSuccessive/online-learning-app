@@ -1,5 +1,12 @@
 import React, {memo} from 'react';
-import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {selectedTheme} from '../../config/Themes';
 import {Icon, DummyData, screensData} from '../../config';
 import {NavigationDataTypes} from '../../models';
@@ -8,7 +15,7 @@ import styles from './style';
 const CourseFilesScreen = (props: NavigationDataTypes) => {
   const {navigation} = props;
   return (
-    <View style={styles(selectedTheme).mainContainer}>
+    <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <ScrollView showsHorizontalScrollIndicator={false}>
         <View>
           <Text style={styles(selectedTheme).tilte}>
@@ -74,7 +81,7 @@ const CourseFilesScreen = (props: NavigationDataTypes) => {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -2,6 +2,7 @@ import React, {memo, useState} from 'react';
 import {
   Image,
   Modal,
+  SafeAreaView,
   ScrollView,
   Switch,
   Text,
@@ -43,7 +44,7 @@ const ProfileScreen = (props: profileprops) => {
   } = props;
 
   return (
-    <View style={styles(selectedTheme).mainContainer}>
+    <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <View style={styles(selectedTheme).mainSubContainer}>
         <View style={styles(selectedTheme).headerContainer}>
           <Text style={styles(selectedTheme).headerText}>
@@ -233,7 +234,7 @@ const ProfileScreen = (props: profileprops) => {
           </View>
         </Modal>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
