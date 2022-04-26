@@ -1,28 +1,32 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import {COLORS, FONTS} from '../../config/Themes';
+import {COLORS, FONTS, SIZES} from '../../config/Themes';
 
 let styles = (selectedTheme: any) =>
   StyleSheet.create({
-    Container: {
+    container: {
       flex: 1,
       backgroundColor: selectedTheme.backgroundwhiteNgray8,
       paddingHorizontal: 20,
       paddingVertical: 20,
     },
-    MainSubContainer: {
+    mainSubContainer: {
       flex: 0.9,
     },
     headercontainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
     },
-    Text: {
-      fontSize: 22,
-      fontWeight: '700',
-      color: selectedTheme.textblackNwhite,
+    nameAndDate: {
+      marginBottom: 10,
     },
-    SubText: {
-      fontSize: 14,
+    text: {
+      fontSize: 28,
+      color: selectedTheme.textblackNwhite,
+      ...FONTS.heading,
+    },
+    subText: {
+      fontSize: 15,
+      ...FONTS.body,
       color: selectedTheme.textgray8Ngray4,
     },
 
@@ -36,115 +40,126 @@ let styles = (selectedTheme: any) =>
     mainScrollView: {
       flex: 1,
     },
-    SubContainer: {
-      padding: 10,
-      marginVertical: 10,
+    subContainer: {
+      paddingVertical: 26,
+      paddingHorizontal: 14,
+      marginVertical: 20,
     },
-    Image: {
-      borderRadius: 20,
+    backgroundImage: {
+      borderRadius: SIZES.radius,
     },
-    howto: {
+    howToText: {
+      color: COLORS.white,
+      fontSize: 22,
+      ...FONTS.body,
+    },
+    subtextdata: {
       color: COLORS.white,
       fontSize: 22,
       ...FONTS.heading,
     },
-    subtextdata: {
-      color: COLORS.white,
-      fontSize: 17,
-      ...FONTS.body,
-      width: 250,
-    },
-    auther: {
-      marginVertical: 5,
-      color: COLORS.white,
+    author: {
+      marginTop: 15,
       fontSize: 15,
+      color: COLORS.white,
       ...FONTS.body,
-      width: 250,
     },
-    learnbutton: {
-      padding: 10,
+    bannerImage: {
+      marginTop: 20,
+      resizeMode: 'contain',
+    },
+    learnButton: {
+      padding: 15,
       backgroundColor: COLORS.white,
-      width: 130,
+      width: SIZES.width * 0.36,
       borderRadius: 30,
     },
-    learnbuttontext: {
+    startLearningText: {
       alignSelf: 'center',
       color: COLORS.black,
-      fontWeight: '700',
+      ...FONTS.heading,
+      fontSize: 15,
     },
-    thirdrdcontainer: {
+    thirdContainer: {
       flexDirection: 'row',
     },
-    thirdcontainertexttitle: {
+    thirdContainerTextTitle: {
       marginVertical: 5,
-      paddingLeft: 10,
-      fontSize: 17,
-      width: 200,
-      fontWeight: '700',
+      fontSize: 20,
+      width: SIZES.width * 0.66,
       color: selectedTheme.textblackNwhite,
+      ...FONTS.heading,
     },
-    row: {flexDirection: 'row', marginLeft: 10},
-    seaperater: {
+    row: {
+      flexDirection: 'row',
+    },
+    seaperator: {
       borderBottomWidth: 1,
       marginVertical: 10,
       borderColor: selectedTheme.borderColor2,
     },
     thumbnail: {
-      borderRadius: 20,
-      height: 150,
-      width: 240,
+      borderRadius: SIZES.radius,
+      height: SIZES.height * 0.2,
+      width: SIZES.width * 0.7,
     },
     playicon: {
       marginVertical: 5,
+      resizeMode: 'contain',
+    },
+    textAndTimeContainer: {
+      paddingLeft: 10,
     },
     item: {
       flexDirection: 'row',
-      flex: 1,
-      margin: 4,
-      height: Dimensions.get('window').width / 3,
+      height: SIZES.height * 0.18,
+      width: SIZES.width * 0.52,
     },
-    Icons: {
-      flex: 1,
-      resizeMode: 'contain',
+    renderItem: {
+      flexDirection: 'row',
+    },
+    icons: {
       justifyContent: 'flex-end',
     },
     itemIcons: {
-      borderRadius: 20,
+      borderRadius: SIZES.radius,
+      width: SIZES.width * 0.5,
     },
-    itemtext: {
+    itemText: {
       margin: 10,
-      fontSize: 22,
-      fontWeight: '700',
-      ...FONTS.largeTitle,
+      fontSize: 20,
       color: COLORS.white,
+      ...FONTS.heading,
     },
-    Itemcontainer: {
+    itemContainer: {
       marginVertical: 10,
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
     },
-    SeeAllbutton: {
-      padding: 9,
+    seeAllButton: {
+      paddingHorizontal: 12,
+      paddingVertical: 4,
       borderRadius: 20,
       backgroundColor: COLORS.primary,
       alignSelf: 'center',
     },
-    seeAlltext: {
+    seeAllText: {
       color: COLORS.white,
       fontSize: 12,
       fontWeight: '700',
     },
-
-    smallicon: {
+    timeIcon: {
       height: 15,
       width: 15,
       resizeMode: 'contain',
       alignSelf: 'center',
-      tintColor: selectedTheme.tintColor,
     },
     time: {
       color: selectedTheme.textblackNgray4,
+    },
+    instructorText: {
+      color: selectedTheme.textblackNgray,
     },
     ratings: {
       fontSize: 15,
@@ -152,16 +167,15 @@ let styles = (selectedTheme: any) =>
       color: selectedTheme.textblackNwhite,
       textAlignVertical: 'center',
     },
-
-    notificationtitlecontainer: {
+    notificationTitleContainer: {
       flexDirection: 'row',
     },
-    seperater: {
+    seperator: {
       borderBottomWidth: 0.5,
       borderColor: selectedTheme.borderColor2,
       marginVertical: 20,
     },
-    itemtextcontainer: {
+    itemTextContainer: {
       marginLeft: 10,
     },
     header: {
@@ -171,41 +185,35 @@ let styles = (selectedTheme: any) =>
     title: {
       width: 200,
       fontSize: 18,
-      fontWeight: '700',
+      ...FONTS.heading,
       color: selectedTheme.textblackNwhite,
     },
-    subtitle: {
+    subTitle: {
       fontSize: 20,
-      fontWeight: '700',
-
+      ...FONTS.heading,
       color: selectedTheme.textgreenNwhite,
     },
-    ratingcontainer: {
+    ratingContainer: {
       flexDirection: 'row',
       alignItems: 'center',
       paddingLeft: 10,
     },
     image: {
-      height: 120,
-      width: 120,
-      borderRadius: 5,
-      alignSelf: 'center',
-      //resizeMode: "contain",
+      height: 130,
+      width: 130,
+      alignItems: 'flex-end',
+      padding: 10,
     },
-    fevcontainer: {
-      flex: 1,
-      height: 25,
-      width: 25,
+    imageBackgroundRadius: {
+      borderRadius: SIZES.radius,
+    },
+    fevContainer: {
       backgroundColor: COLORS.white,
-      borderRadius: 5,
-      position: 'absolute',
-      margin: 10,
-      alignItems: 'center',
+      borderRadius: 4,
     },
-    fevcon: {
+    fevIcon: {
       width: 20,
       height: 15,
-      justifyContent: 'center',
       margin: 5,
       tintColor: 'red',
       resizeMode: 'contain',

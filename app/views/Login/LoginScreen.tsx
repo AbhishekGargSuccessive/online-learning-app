@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   Image,
   SafeAreaView,
+  ImageBackground,
+  ScrollView,
 } from 'react-native';
 import {selectedTheme} from '../../config/Themes';
 import {
@@ -49,12 +51,15 @@ const LoginScreen = (props: loginpageprops) => {
 
   return (
     <SafeAreaView style={styles(selectedTheme).mainContainer}>
-      <Image
+      <ImageBackground
+        imageStyle={styles(selectedTheme).imageBackgroundStyle}
         source={selectedTheme.name == 'light' ? Images.BG : Images.BG_DARK}
-        style={styles(selectedTheme).bgImage}
-      />
-      <Text style={styles(selectedTheme).heading}>{screensData.LOGIN}</Text>
-      <View style={styles(selectedTheme).container}>
+        style={styles(selectedTheme).bgImage}>
+        <Text style={styles(selectedTheme).heading}>{screensData.LOGIN}</Text>
+      </ImageBackground>
+      <ScrollView
+        style={styles(selectedTheme).container}
+        showsVerticalScrollIndicator={false}>
         <View style={styles(selectedTheme).input}>
           <Text style={styles(selectedTheme).formText}>
             {form.USERNAMEOREMAIL}
@@ -136,7 +141,7 @@ const LoginScreen = (props: loginpageprops) => {
             </Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

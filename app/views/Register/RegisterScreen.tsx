@@ -68,7 +68,7 @@ const RegisterScreen = (props: Registerprops) => {
     Animated.spring(animationValue, {
       toValue: scaleValue.current,
       delay: 1,
-      friction: 1,
+      friction: 0.5,
       useNativeDriver: true,
     }).start();
   };
@@ -80,76 +80,74 @@ const RegisterScreen = (props: Registerprops) => {
       <Text style={styles(selectedTheme).heading}>{screensData.REGISTER}</Text>
 
       <ScrollView style={styles(selectedTheme).flex}>
-        <View style={styles(selectedTheme).container}>
-          <View style={styles(selectedTheme).boxContainer}>
-            {register.map((item, index) => {
-              return (
-                <NEWButton
-                  key={index}
-                  onPress={() => {
-                    setdefaultitem(item.id), runAnimationOnClick();
-                  }}
+        <View style={styles(selectedTheme).boxContainer}>
+          {register.map((item, index) => {
+            return (
+              <NEWButton
+                key={index}
+                onPress={() => {
+                  setdefaultitem(item.id), runAnimationOnClick();
+                }}
+                style={[
+                  styles(selectedTheme).box,
+                  {
+                    backgroundColor:
+                      defaultitem == item.id
+                        ? selectedTheme.backgroundblueNblack
+                        : selectedTheme.backgroundgray10Ngray70,
+                    borderColor:
+                      defaultitem == item.id
+                        ? selectedTheme.borderColor1
+                        : selectedTheme.borderColor1,
+                  },
+                ]}>
+                <Animated.View
                   style={[
-                    styles(selectedTheme).box,
+                    styles(selectedTheme).checkedContainer,
                     {
-                      backgroundColor:
+                      transform:
                         defaultitem == item.id
-                          ? selectedTheme.backgroundblueNblack
-                          : selectedTheme.backgroundgray10Ngray70,
-                      borderColor:
-                        defaultitem == item.id
-                          ? selectedTheme.borderColor1
-                          : selectedTheme.borderColor1,
+                          ? [
+                              {
+                                translateX: animationValue.interpolate({
+                                  inputRange: [0, 1],
+                                  outputRange: [10, 15],
+                                }),
+                              },
+                            ]
+                          : [],
                     },
                   ]}>
-                  <Animated.View
-                    style={[
-                      styles(selectedTheme).checkedContainer,
-                      {
-                        transform:
-                          defaultitem == item.id
-                            ? [
-                                {
-                                  translateX: animationValue.interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [1, 70],
-                                  }),
-                                },
-                              ]
-                            : [],
-                      },
-                    ]}>
-                    {defaultitem == item.id ? (
-                      <Image
-                        source={Icon.CHECKBOX_ON_DARK}
-                        style={styles(selectedTheme).icons}
-                      />
-                    ) : (
-                      <View style={styles(selectedTheme).icons}></View>
-                    )}
-                  </Animated.View>
-                  <Text
-                    style={{
+                  {defaultitem == item.id ? (
+                    <Image
+                      source={Icon.CHECKBOX_ON_DARK}
+                      style={styles(selectedTheme).icons}
+                    />
+                  ) : (
+                    <View style={styles(selectedTheme).icons}></View>
+                  )}
+                </Animated.View>
+                <Text
+                  style={{
+                    color: defaultitem == item.id ? COLORS.white : COLORS.black,
+                  }}>
+                  {screensData.register.I_AM_A}{' '}
+                </Text>
+                <Text
+                  style={[
+                    styles(selectedTheme).labelText,
+                    {
                       color:
-                        defaultitem == item.id ? COLORS.white : COLORS.gray40,
-                    }}>
-                    {screensData.register.I_AM_A}{' '}
-                  </Text>
-                  <Text
-                    style={[
-                      styles(selectedTheme).labelText,
-                      {
-                        color:
-                          defaultitem == item.id ? COLORS.white : COLORS.gray40,
-                      },
-                    ]}>
-                    {item.label}
-                  </Text>
-                </NEWButton>
-              );
-            })}
-          </View>
-
+                        defaultitem == item.id ? COLORS.white : COLORS.black,
+                    },
+                  ]}>
+                  {item.label}
+                </Text>
+              </NEWButton>
+            );
+          })}
+        </View>
+        <View style={styles(selectedTheme).container}>
           <View style={styles(selectedTheme).input}>
             <Text style={styles(selectedTheme).formText}>{form.USER}</Text>
             <View style={styles(selectedTheme).inputContainer}>
@@ -209,7 +207,7 @@ const RegisterScreen = (props: Registerprops) => {
             style={styles(selectedTheme).button}
             onPress={submit}>
             <Text style={styles(selectedTheme).buttonText}>
-              {buttons.REGISTER}
+              {buttons.CREATE_ACCOUNT}
             </Text>
           </TouchableOpacity>
 
@@ -247,8 +245,8 @@ const RegisterScreen = (props: Registerprops) => {
 
             <TouchableOpacity
               onPress={() => navigation.navigate(RouteScreens.LOGINMODEL)}>
-              <Text style={styles(selectedTheme).signupText}>
-                {buttons.LOGIN}
+              <Text style={styles(selectedTheme).loginText}>
+                {screensData.register.LOGIN}
               </Text>
             </TouchableOpacity>
           </View>

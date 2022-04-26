@@ -46,7 +46,7 @@ const coursesList1 = [
 const coursesList2 = [
   {
     id: 0,
-    title: 'The Ultimate Ui/Ux Course Beginner ',
+    title: 'The Ultimate Ui/Ux Course Beginner to Advanced',
     clsss_level: 'Beginner',
     creted_on: '12-12-21',
     duration: 30,

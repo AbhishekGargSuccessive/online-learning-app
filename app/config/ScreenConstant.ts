@@ -23,14 +23,14 @@ const screensData = {
     NO_DATA_PRESENT: 'No data present!',
   },
   home: {
-    GREETING: 'Hello, Alex',
-    DATE: 'Thursday ,3 Feb 2022',
-    HEAD1: 'How To',
-    HEAD2: 'Make your brand more visible with our checklist',
-    BY: 'by Alex',
+    NAME: 'Hello, Alex',
+    DATE: 'Thursday, 26th Feb 2022',
+    HOWTO: 'HOW TO',
+    SUBPARAGRAPH: 'Make your brand more visible with our checklist',
+    AUTHORNAME: 'By John Harris',
     STARTLERNING: 'Start Learning',
-    CATEGORIES: 'Choose Categories',
-    POPULERCOURSES: 'Populer Courses',
+    CATEGORIES: 'Categories',
+    POPULARCOURSES: 'Popular Courses',
   },
   instructor: {
     NAME: 'Alex',
@@ -58,7 +58,7 @@ const screensData = {
     FILES: 'Files',
   },
   loginPage: {
-    OR_LOGIN_WITH: 'Or Login with',
+    OR_LOGIN_WITH: 'or login with',
     NEW_USER_: 'New User?',
   },
   notification: {
@@ -69,15 +69,16 @@ const screensData = {
     NEXT: 'Next',
   },
   register: {
-    OR_SIGNUP_WITH: 'Or Signup with',
+    OR_SIGNUP_WITH: 'or sign up with',
     ALREDY_A_USER: 'Alredy a User?',
     I_AM_A: 'I am a',
+    LOGIN: 'Login',
   },
 };
 
 const buttons = {
-  LOGIN: 'Login',
-  REGISTER: 'Register',
+  LOGIN: 'LOGIN',
+  CREATE_ACCOUNT: 'CREATE ACCOUNT',
   GOOGLE: 'Google',
   FACEBOOK: 'Facebook',
   SIGNUPNOW: 'Sign Up Now',

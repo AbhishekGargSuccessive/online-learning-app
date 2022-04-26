@@ -11,7 +11,7 @@ const styles = (selectedTheme: any) =>
       width: '100%',
       position: 'absolute',
     },
-    conatiner: {
+    container: {
       flex: 1,
       marginHorizontal: 20,
       marginVertical: 20,

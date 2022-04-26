@@ -114,7 +114,7 @@ const CourseChapterScreen = (props: Corselistingprops) => {
 
         <View style={styles(selectedTheme).itemContainer}>
           <Text style={styles(selectedTheme).thirdContainerTextTitle}>
-            {screensData.home.POPULERCOURSES}
+            {screensData.home.POPULARCOURSES}
           </Text>
           <TouchableOpacity style={styles(selectedTheme).seeAllButton}>
             <Text style={styles(selectedTheme).seeAllText}>

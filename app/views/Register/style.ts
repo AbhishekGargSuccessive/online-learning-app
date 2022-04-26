@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {FONTS, COLORS} from '../../config/Themes';
+import {FONTS, COLORS, SIZES} from '../../config/Themes';
 
 const styles = (selectedTheme: any) =>
   StyleSheet.create({
@@ -14,12 +14,12 @@ const styles = (selectedTheme: any) =>
     boxContainer: {
       marginTop: 20,
       flexDirection: 'row',
-      justifyContent: 'space-around',
+      justifyContent: 'space-evenly',
     },
     box: {
-      width: '40%',
+      width: '42%',
       padding: 20,
-      borderRadius: 10,
+      borderRadius: SIZES.radius,
     },
     checkedIcon: {
       width: 20,
@@ -33,7 +33,6 @@ const styles = (selectedTheme: any) =>
       alignSelf: 'center',
       marginVertical: 10,
       fontSize: 30,
-      fontWeight: '700',
       ...FONTS.heading,
       color: selectedTheme.textblackNwhite,
     },
@@ -44,19 +43,19 @@ const styles = (selectedTheme: any) =>
     },
     eyeContainer: {
       alignSelf: 'center',
+      paddingRight: 10,
     },
     eyeIcon: {
       width: 20,
       height: 20,
       alignSelf: 'center',
       resizeMode: 'contain',
-      tintColor: selectedTheme.tintColor,
     },
     inputText: {
+      flex: 1,
       color: selectedTheme.textblackNgray,
-      width: '94%',
       fontSize: 15,
-      ...FONTS.heading,
+      ...FONTS.body,
     },
     socialButtonContainer: {
       flexDirection: 'row',
@@ -67,7 +66,7 @@ const styles = (selectedTheme: any) =>
       flexDirection: 'row',
       alignContent: 'center',
       justifyContent: 'center',
-      backgroundColor: COLORS.gray10,
+      backgroundColor: COLORS.additionalColor9,
       width: '40%',
       borderRadius: 90,
     },
@@ -78,14 +77,12 @@ const styles = (selectedTheme: any) =>
     },
     formText: {
       fontSize: 16,
-      fontWeight: '700',
-      color: COLORS.gray20,
+      color: COLORS.gray30,
       ...FONTS.heading,
     },
     buttonText: {
-      fontSize: 17,
+      fontSize: 16,
       color: selectedTheme.textwhite,
-      fontWeight: '800',
       ...FONTS.heading,
     },
     text: {
@@ -95,32 +92,32 @@ const styles = (selectedTheme: any) =>
       ...FONTS.body,
     },
     button: {
-      borderRadius: 90,
+      borderRadius: 50,
       backgroundColor: COLORS.primary,
       alignItems: 'center',
-      padding: 10,
+      padding: 15,
       marginVertical: 10,
     },
     socialButtonText: {
-      marginHorizontal: 10,
-      marginVertical: 12,
-      fontWeight: '600',
+      paddingVertical: 18,
+      paddingHorizontal: 10,
       alignSelf: 'center',
       color: COLORS.black,
-      ...FONTS.heading,
+      ...FONTS.body,
+      fontSize: 15,
     },
-    signupText: {
-      fontSize: 18,
+    loginText: {
+      fontSize: 16,
       alignSelf: 'center',
-      fontWeight: '700',
       color: COLORS.primary,
       paddingLeft: 10,
       ...FONTS.heading,
     },
     newUserText: {
       alignSelf: 'center',
-      color: selectedTheme.textblackNgray,
-      ...FONTS.heading,
+      color: selectedTheme.textblackNgray3,
+      ...FONTS.body,
+      fontSize: 16,
     },
     icon: {
       width: 25,
@@ -130,23 +127,26 @@ const styles = (selectedTheme: any) =>
       marginLeft: 10,
     },
     checkedContainer: {
+      flex: 1,
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'flex-end',
       marginVertical: 5,
+      paddingRight: 10,
     },
     icons: {
       height: 30,
       width: 30,
-      resizeMode: 'contain',
+      resizeMode: 'cover',
       borderRadius: 90,
       borderWidth: 1,
     },
     invalidText: {
       color: COLORS.secondary,
+      ...FONTS.body,
     },
     labelText: {
-      fontWeight: '700',
       fontSize: 20,
+      ...FONTS.heading,
     },
     flex: {
       flex: 1,

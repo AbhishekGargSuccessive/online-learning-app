@@ -88,14 +88,14 @@ const HomeScreen = (props: Homepageprops) => {
     outputRange: ['-20deg', '20deg', '0deg'],
   });
   return (
-    <SafeAreaView style={styles(selectedTheme).Container}>
-      <View style={styles(selectedTheme).MainSubContainer}>
+    <SafeAreaView style={styles(selectedTheme).container}>
+      <View style={styles(selectedTheme).mainSubContainer}>
         <View style={styles(selectedTheme).headercontainer}>
-          <View>
-            <Text style={styles(selectedTheme).Text}>
-              {screensData.home.GREETING}
+          <View style={styles(selectedTheme).nameAndDate}>
+            <Text style={styles(selectedTheme).text}>
+              {screensData.home.NAME}
             </Text>
-            <Text style={styles(selectedTheme).SubText}>
+            <Text style={styles(selectedTheme).subText}>
               {screensData.home.DATE}
             </Text>
           </View>
@@ -118,23 +118,26 @@ const HomeScreen = (props: Homepageprops) => {
           showsVerticalScrollIndicator={false}
           style={styles(selectedTheme).mainScrollView}>
           <ImageBackground
-            source={Images.BG_1}
-            imageStyle={styles(selectedTheme).Image}
-            style={styles(selectedTheme).SubContainer}>
-            <Text style={styles(selectedTheme).howto}>
-              {screensData.home.HEAD1}
+            source={Images.FEATURED_BG_IMAGE}
+            imageStyle={styles(selectedTheme).backgroundImage}
+            style={styles(selectedTheme).subContainer}>
+            <Text style={styles(selectedTheme).howToText}>
+              {screensData.home.HOWTO}
             </Text>
             <Text style={styles(selectedTheme).subtextdata}>
-              {screensData.home.HEAD2}
+              {screensData.home.SUBPARAGRAPH}
             </Text>
-            <Text style={styles(selectedTheme).auther}>
-              {screensData.home.BY}
+            <Text style={styles(selectedTheme).author}>
+              {screensData.home.AUTHORNAME}
             </Text>
-            <Image source={Images.START_LEARNING} />
+            <Image
+              source={Images.START_LEARNING}
+              style={styles(selectedTheme).bannerImage}
+            />
             <TouchableOpacity
-              style={styles(selectedTheme).learnbutton}
+              style={styles(selectedTheme).learnButton}
               onPress={() => navigation.navigate(RouteScreens.CATEGORYMODEL)}>
-              <Text style={styles(selectedTheme).learnbuttontext}>
+              <Text style={styles(selectedTheme).startLearningText}>
                 {screensData.home.STARTLERNING}
               </Text>
             </TouchableOpacity>
@@ -142,7 +145,7 @@ const HomeScreen = (props: Homepageprops) => {
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            style={styles(selectedTheme).thirdrdcontainer}>
+            style={styles(selectedTheme).thirdContainer}>
             {courselist1.map((item, index) => {
               return (
                 <TouchableOpacity
@@ -161,15 +164,15 @@ const HomeScreen = (props: Homepageprops) => {
                       source={Icon.PLAY_1}
                       style={styles(selectedTheme).playicon}
                     />
-                    <View>
+                    <View style={styles(selectedTheme).textAndTimeContainer}>
                       <Text
-                        style={styles(selectedTheme).thirdcontainertexttitle}>
+                        style={styles(selectedTheme).thirdContainerTextTitle}>
                         {item.title}
                       </Text>
                       <View style={styles(selectedTheme).row}>
                         <Image
                           source={Icon.TIME}
-                          style={styles(selectedTheme).smallicon}
+                          style={styles(selectedTheme).timeIcon}
                         />
                         <Text style={styles(selectedTheme).time}>
                           {' '}
@@ -183,14 +186,14 @@ const HomeScreen = (props: Homepageprops) => {
             })}
           </ScrollView>
 
-          <View style={styles(selectedTheme).Itemcontainer}>
-            <Text style={styles(selectedTheme).thirdcontainertexttitle}>
+          <View style={styles(selectedTheme).itemContainer}>
+            <Text style={styles(selectedTheme).thirdContainerTextTitle}>
               {screensData.home.CATEGORIES}
             </Text>
             <TouchableOpacity
-              style={styles(selectedTheme).SeeAllbutton}
+              style={styles(selectedTheme).seeAllButton}
               onPress={() => navigation.navigate(RouteScreens.CATEGORYMODEL)}>
-              <Text style={styles(selectedTheme).seeAlltext}>
+              <Text style={styles(selectedTheme).seeAllText}>
                 {buttons.SEEALL}
               </Text>
             </TouchableOpacity>
@@ -207,12 +210,12 @@ const HomeScreen = (props: Homepageprops) => {
                       Icon: item.icon,
                     })
                   }
-                  style={[styles(selectedTheme).item]}>
+                  style={styles(selectedTheme).item}>
                   <ImageBackground
                     source={item.thumbnail}
                     imageStyle={styles(selectedTheme).itemIcons}
-                    style={[styles(selectedTheme).Icons]}>
-                    <Text style={[styles(selectedTheme).itemtext]}>
+                    style={styles(selectedTheme).icons}>
+                    <Text style={[styles(selectedTheme).itemText]}>
                       {item.title}
                     </Text>
                   </ImageBackground>
@@ -221,14 +224,14 @@ const HomeScreen = (props: Homepageprops) => {
             })}
           </ScrollView>
 
-          <View style={styles(selectedTheme).Itemcontainer}>
-            <Text style={styles(selectedTheme).thirdcontainertexttitle}>
-              {screensData.home.POPULERCOURSES}
+          <View style={styles(selectedTheme).itemContainer}>
+            <Text style={styles(selectedTheme).thirdContainerTextTitle}>
+              {screensData.home.POPULARCOURSES}
             </Text>
             <TouchableOpacity
-              style={styles(selectedTheme).SeeAllbutton}
+              style={styles(selectedTheme).seeAllButton}
               onPress={() => setseeall(true)}>
-              <Text style={styles(selectedTheme).seeAlltext}>
+              <Text style={styles(selectedTheme).seeAllText}>
                 {buttons.SEEALL}
               </Text>
             </TouchableOpacity>

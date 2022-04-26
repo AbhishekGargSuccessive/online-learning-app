@@ -34,7 +34,7 @@ const NotificationTab = (props: NotificationTabprops) => {
         source={selectedTheme.name == 'light' ? Images.BG : Images.BG_DARK}
         style={styles(selectedTheme).bgImage}
       />
-      <View style={styles(selectedTheme).conatiner}>
+      <View style={styles(selectedTheme).container}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           style={styles(selectedTheme).leftButton}>
