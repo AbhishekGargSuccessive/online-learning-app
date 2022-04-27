@@ -11,12 +11,12 @@ type DefaultRootStat = {
 const Homemodel = (props: NavigationDataTypes) => {
   const {navigation} = props;
 
-  const Userdata = useSelector<DefaultRootStat>(state => state.Data);
+  const themeData = useSelector<DefaultRootStat>(state => state.Data);
 
-  const [forceRednder,setForceRender]=useState(false);
-  useEffect(() => {
-    setForceRender(!forceRednder)
-  }, [Userdata])
+  // const [forceRednder,setForceRender]=useState(false);
+  // useEffect(() => {
+  //   setForceRender(!forceRednder)
+  // }, [Userdata])
   
 
   const [seeall, setseeall] = useState(false);
@@ -41,4 +41,4 @@ const Homemodel = (props: NavigationDataTypes) => {
     />
   );
 };
-export default memo(Homemodel);
+export default Homemodel;

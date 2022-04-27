@@ -3,7 +3,7 @@ import {USER_DATA, ADD_PROFILE_PIC} from '../action/type';
 const initialState = {
   profile:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png',
-  Data: 'true',
+  Data: 'false',
 };
 
 const rootReducer = (state = initialState, action: any) => {

@@ -16,7 +16,7 @@ const SearchModel = (props: NavigationDataTypes) => {
   const [isSearch, setisSearch] = useState(false);
   const [isfavourite, setisfavourite] = useState([]);
 
-  const Userdata = useSelector<DefaultRootStat>(state => state.Data);
+  const themeData = useSelector<DefaultRootStat>(state => state.Data);
 
   let menu = DummyData.coursesList2;
   const SearchData = menu
