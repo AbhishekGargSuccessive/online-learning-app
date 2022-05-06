@@ -9,28 +9,27 @@ const styles = (selectedTheme: any) =>
       paddingHorizontal: 20,
       paddingVertical: 20,
     },
-    tilte: {
+    titleText: {
       fontSize: 22,
-      color: selectedTheme.textblackNgray4,
-      fontWeight: '700',
+      color: selectedTheme.textblackNgray,
       marginVertical: 5,
       ...FONTS.largeTitle,
     },
-    studentDataContianer: {
+    studentDataContainer: {
       flexDirection: 'row',
       alignItems: 'center',
     },
     studentContainer: {
-      marginRight: 10,
+      marginRight: 12,
     },
-    studentIcon: {
-      width: 80,
-      height: 80,
+    studentIcon:{
+      width: 85,
+      height: 85,
     },
     viewAll: {
       color: COLORS.primary,
-      fontSize: 20,
-      fontWeight: '700',
+      fontSize: 16,
+      ...FONTS.heading,
     },
     filesContainer: {
       flexDirection: 'row',
@@ -43,7 +42,7 @@ const styles = (selectedTheme: any) =>
       alignItems: 'center',
     },
     menuIcon: {
-      height: 20,
+      height: 15,
       width: 30,
       resizeMode: 'contain',
       alignSelf: 'center',
@@ -54,15 +53,17 @@ const styles = (selectedTheme: any) =>
     title: {
       fontSize: 20,
       color: selectedTheme.textblackNwhite,
-      fontWeight: '700',
+      ...FONTS.heading
     },
     author: {
       fontSize: 16,
       color: selectedTheme.textgray8Ngray4,
+      ...FONTS.body
     },
     date: {
       fontSize: 14,
       color: selectedTheme.textblackNgray,
+      ...FONTS.body
     },
   });
 

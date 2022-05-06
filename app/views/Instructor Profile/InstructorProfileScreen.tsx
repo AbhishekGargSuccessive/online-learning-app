@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Image,
+  ImageBackground,
   Linking,
   SafeAreaView,
   ScrollView,
@@ -90,8 +91,8 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
           <View style={styles(selectedTheme).imageContainerView}>
             <View style={styles(selectedTheme).imageViewContainer}>
               <Image
-                source={Icon.CHECKED}
-                style={styles(selectedTheme).camerIcon}
+                source={Icon.CHECK}
+                style={styles(selectedTheme).rightIcon}
               />
             </View>
           </View>
@@ -117,7 +118,7 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
                   <Text style={styles(selectedTheme).labalText}>
                     {item.value}
                   </Text>
-                  <Text style={styles(selectedTheme).labalText}>
+                  <Text style={styles(selectedTheme).lowerText}>
                     {item.label}
                   </Text>
                 </View>
@@ -125,48 +126,48 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
             })}
           </View>
           <View>
-            <Text style={styles(selectedTheme).thirdContainerTextTitle}>
+            <Text style={styles(selectedTheme).studentRatingText}>
               {screensData.instructor.ABOUTME}
             </Text>
-            <Text style={styles(selectedTheme).time}>
+            <Text style={styles(selectedTheme).descriptionText}>
               {screensData.instructor.BIO}
             </Text>
           </View>
+          <View style={styles(selectedTheme).seperator} />
 
-          <View>
-            <View style={styles(selectedTheme).itemContainer}>
-              <Text style={styles(selectedTheme).thirdContainerTextTitle}>
-                MY Courses (4)
+          <View style={styles(selectedTheme).itemContainer}>
+            <Text style={styles(selectedTheme).studentRatingText}>
+              {screensData.instructor.MYCOURSES}
+            </Text>
+            <TouchableOpacity style={styles(selectedTheme).seeAllButton}>
+              <Text style={styles(selectedTheme).seeAllText}>
+                {buttons.SEEALL}
               </Text>
-              <TouchableOpacity style={styles(selectedTheme).seeAllButton}>
-                <Text style={styles(selectedTheme).seeAllText}>
-                  {buttons.SEEALL}
-                </Text>
-              </TouchableOpacity>
-            </View>
-
-            <ScrollView>
-              {data.map((item, index) => {
-                return (
-                  <View key={index}>
-                    {index < 4 ? (
-                      <RenderItem
-                        navigation={navigation}
-                        item={item}
-                        isfavourite={isfavourite}
-                        setisfavourite={setisfavourite}
-                      />
-                    ) : null}
-                  </View>
-                );
-              })}
-            </ScrollView>
+            </TouchableOpacity>
           </View>
 
+          <ScrollView>
+            {data.map((item, index) => {
+              return (
+                <View key={index}>
+                  {index < 4 ? (
+                    <RenderItem
+                      navigation={navigation}
+                      item={item}
+                      index={index}
+                      isfavourite={isfavourite}
+                      setisfavourite={setisfavourite}
+                    />
+                  ) : null}
+                </View>
+              );
+            })}
+          </ScrollView>
+
           <View>
             <View style={styles(selectedTheme).itemContainer}>
-              <Text style={styles(selectedTheme).thirdContainerTextTitle}>
-                Student Rating
+              <Text style={styles(selectedTheme).studentRatingText}>
+                {screensData.instructor.STUDENTRATING}
               </Text>
             </View>
             <View>
@@ -212,7 +213,7 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
           </View>
           <View>
             <View style={styles(selectedTheme).itemContainer}>
-              <Text style={styles(selectedTheme).thirdContainerTextTitle}>
+              <Text style={styles(selectedTheme).studentRatingText}>
                 {screensData.instructor.STUDENTREVIEW}
               </Text>
               <TouchableOpacity style={styles(selectedTheme).seeAllButton}>
@@ -251,7 +252,7 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
           </View>
           <View>
             <View style={styles(selectedTheme).itemContainer}>
-              <Text style={styles(selectedTheme).thirdContainerTextTitle}>
+              <Text style={styles(selectedTheme).studentRatingText}>
                 {screensData.instructor.CONNECTHERE}
               </Text>
             </View>

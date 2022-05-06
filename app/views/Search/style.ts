@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import {COLORS, FONTS} from '../../config/Themes';
+import {COLORS, FONTS, SIZES} from '../../config/Themes';
 
 const styles = (selectedTheme: any) =>
   StyleSheet.create({
@@ -32,7 +32,7 @@ const styles = (selectedTheme: any) =>
       width: 25,
       resizeMode: 'contain',
       alignSelf: 'center',
-      tintColor: selectedTheme.tintColor,
+      tintColor: selectedTheme.textblackNgray3,
     },
     renderView: {
       borderWidth: 1,
@@ -62,14 +62,13 @@ const styles = (selectedTheme: any) =>
     buttonText: {
       fontSize: 17,
       color: selectedTheme.textwhite,
-      fontWeight: '800',
       ...FONTS.heading,
     },
     text: {
       fontSize: 20,
-      fontWeight: '700',
       marginVertical: 20,
       color: selectedTheme.textblackNgray,
+      ...FONTS.heading
     },
     flatlistContainer: {
       marginVertical: 20,
@@ -84,19 +83,19 @@ const styles = (selectedTheme: any) =>
     },
     topSearchContainer: {
       backgroundColor: selectedTheme.backgroundgray10Ngray70,
-      marginRight: 4,
-      borderRadius: 10,
-      padding: 10,
+      marginRight: 10,
+      borderRadius: SIZES.radius,
+      padding: 12,
     },
     itemtext: {
       fontSize: 22,
-      fontWeight: '700',
-      color: selectedTheme.textblackNwhite,
-      ...FONTS.largeTitle,
+      color: selectedTheme.textwhite,
+      ...FONTS.heading,
     },
     searchList: {
-      fontSize: 15,
-      color: selectedTheme.textblackNwhite,
+      fontSize: 16,
+      color: selectedTheme.textblackNgray3,
+      ...FONTS.heading,
     },
     topSearch: {
       flex: 1,

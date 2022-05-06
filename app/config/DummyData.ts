@@ -419,7 +419,7 @@ const UserData = [
   },
   {
     id: 2,
-    icon: Icon.LOCK,
+    icon: Icon.PASSWORD,
     label: 'Password',
     Value: 'Updated 2 weeks ago',
   },
@@ -439,7 +439,7 @@ const UserData2 = [
   {
     id: 1,
     icon: Icon.NEW_ICON,
-    label: 'New Course notification',
+    label: 'New Course Notifications',
   },
   {
     id: 2,

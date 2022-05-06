@@ -52,13 +52,13 @@ const membership = [
     id: 2,
     price: '$68',
     months: '6 Month',
-    subtitile: '$11/month Billed half-yearly',
+    subtitile: '$11.33/month Billed half-yearly',
   },
   {
     id: 3,
     price: '$115',
     months: 'Year',
-    subtitile: "Pay once And Don't worry for a year",
+    subtitile: "Pay once And don't worry for a year",
   },
 ];
 

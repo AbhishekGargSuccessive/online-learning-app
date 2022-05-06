@@ -48,7 +48,7 @@ const ProfileScreen = (props: profileprops) => {
       <View style={styles(selectedTheme).mainSubContainer}>
         <View style={styles(selectedTheme).headerContainer}>
           <Text style={styles(selectedTheme).headerText}>
-            {screensData.Profile.name}
+            {screensData.Profile.NAME}
           </Text>
           <TouchableOpacity
             onPress={() => {
@@ -60,7 +60,9 @@ const ProfileScreen = (props: profileprops) => {
             />
           </TouchableOpacity>
         </View>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={{marginTop: 20}}>
           <View style={styles(selectedTheme).subContainer}>
             <View style={{flexDirection: 'row'}}>
               <TouchableOpacity
@@ -92,10 +94,10 @@ const ProfileScreen = (props: profileprops) => {
                 />
                 <View style={styles(selectedTheme).progressTextContainer}>
                   <Text style={styles(selectedTheme).progressText}>
-                    {screensData.Profile.Overallprogress}
+                    {screensData.Profile.OVERALLPROGRESS}
                   </Text>
                   <Text style={styles(selectedTheme).progressText}>
-                    {screensData.Profile.percentage}
+                    {screensData.Profile.PERCENTAGE}
                   </Text>
                 </View>
               </View>
@@ -133,7 +135,7 @@ const ProfileScreen = (props: profileprops) => {
                       style={styles(selectedTheme).rightImageContainer}>
                       <Image
                         source={Icon.RIGHT_ARROW}
-                        style={styles(selectedTheme).icon}
+                        style={styles(selectedTheme).rightArrowIcon}
                       />
                     </TouchableOpacity>
                   </View>
@@ -158,7 +160,7 @@ const ProfileScreen = (props: profileprops) => {
                         style={styles(selectedTheme).icon}
                       />
                       <View style={styles(selectedTheme).textContainer}>
-                        <Text style={styles(selectedTheme).label}>
+                        <Text style={styles(selectedTheme).lableData}>
                           {item.label}
                         </Text>
                       </View>
@@ -168,12 +170,12 @@ const ProfileScreen = (props: profileprops) => {
                       {index == 0 ? (
                         <Image
                           source={Icon.RIGHT_ARROW}
-                          style={styles(selectedTheme).icon}
+                          style={styles(selectedTheme).rightArrowIcon}
                         />
                       ) : (
                         <Switch
-                          trackColor={{false: '#767577', true: COLORS.gray40}}
-                          thumbColor={isEnabled ? COLORS.primary : '#f4f3f4'}
+                          trackColor={{false: COLORS.gray20, true: COLORS.additionalColor13}}
+                          thumbColor={isEnabled ? COLORS.primary : COLORS.gray40}
                           ios_backgroundColor="#3e3e3e"
                           onValueChange={toggleSwitch}
                           value={isEnabled}

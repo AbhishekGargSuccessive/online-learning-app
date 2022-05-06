@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {COLORS} from '../../config/Themes';
+import {COLORS, FONTS, SIZES} from '../../config/Themes';
 
 const styles = (selectedTheme: any) =>
   StyleSheet.create({
@@ -28,13 +28,13 @@ const styles = (selectedTheme: any) =>
       justifyContent: 'space-between',
     },
     iconBack: {
-      width: 35,
-      height: 35,
-      backgroundColor: selectedTheme.backgroundgray10Ngray70,
+      width: 40,
+      height: 40,
+      backgroundColor: selectedTheme.backgroundwhiteNgray9,
       borderRadius: 90,
       justifyContent: 'center',
       alignItems: 'center',
-      tintColor: 'white',
+      tintColor: COLORS.white,
     },
     playButton: {
       height: 50,
@@ -43,11 +43,10 @@ const styles = (selectedTheme: any) =>
       borderRadius: 90,
       alignItems: 'center',
       justifyContent: 'center',
-      marginRight: 10,
     },
     icons: {
-      height: 25,
-      width: 25,
+      height: 24,
+      width: 24,
       resizeMode: 'contain',
     },
     imageContainer: {
@@ -59,24 +58,24 @@ const styles = (selectedTheme: any) =>
     },
     button: {
       backgroundColor: selectedTheme.backgroundgray10Ngray70,
-      padding: 10,
+      padding: 14,
       width: '100%',
       flex: 1,
       alignItems: 'center',
-      borderBottomWidth: 2,
+      borderBottomWidth: 3,
     },
     secondIcons: {
-      height: 25,
-      width: 25,
+      height: 26,
+      width: 26,
       resizeMode: 'contain',
       tintColor: COLORS.white,
       alignSelf: 'center',
-      marginRight: 10,
+      marginRight: 20,
     },
     buttonText: {
       fontSize: 18,
-      fontWeight: '600',
       color: selectedTheme.textblackNgray,
+      ...FONTS.heading,
     },
     flex: {
       flex: 1,

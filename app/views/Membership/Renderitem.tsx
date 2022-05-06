@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, Pressable} from 'react-native';
 import {COLORS, selectedTheme} from '../../config/Themes';
 import {Icon, screensData} from '../../config';
 import styles from './style';
@@ -19,7 +19,7 @@ interface renderprops {
 const Renderitem = (props: renderprops) => {
   const {item, defaultitem, setdefaultitem} = props;
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={() => setdefaultitem(item.id)}
       style={[
         styles(selectedTheme).item,
@@ -39,15 +39,17 @@ const Renderitem = (props: renderprops) => {
           {defaultitem == item.id ? (
             <Image
               source={Icon.CHECKBOX_ON_DARK}
-              style={[styles(selectedTheme).icons]}
+              style={styles(selectedTheme).icons}
             />
           ) : (
             <View style={styles(selectedTheme).icons}></View>
           )}
           {item.id == 0 ? (
-            <Text style={styles(selectedTheme).bestDeals}>
-              {screensData.membership.BEST_DEAL}
-            </Text>
+            <View>
+              <Text style={styles(selectedTheme).bestDeals}>
+                {screensData.membership.BEST_OFFER}
+              </Text>
+            </View>
           ) : null}
         </View>
 
@@ -91,7 +93,7 @@ const Renderitem = (props: renderprops) => {
           {item.subtitile}
         </Text>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

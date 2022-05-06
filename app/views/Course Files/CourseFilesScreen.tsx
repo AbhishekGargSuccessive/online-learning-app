@@ -18,10 +18,10 @@ const CourseFilesScreen = (props: NavigationDataTypes) => {
     <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <ScrollView showsHorizontalScrollIndicator={false}>
         <View>
-          <Text style={styles(selectedTheme).tilte}>
+          <Text style={styles(selectedTheme).titleText}>
             {screensData.courseFile.STUDENTS}
           </Text>
-          <View style={styles(selectedTheme).studentDataContianer}>
+          <View style={styles(selectedTheme).studentDataContainer}>
             {DummyData.courseDetails.students.map((item, index) => {
               return (
                 <View
@@ -45,7 +45,7 @@ const CourseFilesScreen = (props: NavigationDataTypes) => {
           </View>
         </View>
         <View>
-          <Text style={styles(selectedTheme).tilte}>
+          <Text style={styles(selectedTheme).titleText}>
             {screensData.courseFile.FILES}
           </Text>
           <View>

@@ -45,6 +45,7 @@ const CourseChapterScreen = (props: Corselistingprops) => {
             <Text style={styles(selectedTheme).smallText}>
               {DATA.number_of_students}
             </Text>
+            <Image source={Icon.TIME} style={styles(selectedTheme).timeIcon} />
             <Text style={styles(selectedTheme).smallText}>{DATA.duration}</Text>
           </View>
         </View>
@@ -55,27 +56,27 @@ const CourseChapterScreen = (props: Corselistingprops) => {
               style={styles(selectedTheme).profileIcon}
             />
             <View>
-              <Text style={styles(selectedTheme).time}>
+              <Text style={styles(selectedTheme).userNameText}>
                 {DATA.instructor.name}
               </Text>
-              <Text style={styles(selectedTheme).time}>
+              <Text style={styles(selectedTheme).programmerText}>
                 {DATA.instructor.title}
               </Text>
             </View>
           </View>
           <TouchableOpacity
-            style={styles(selectedTheme).seeAllButton}
+            style={styles(selectedTheme).followButton}
             onPress={() =>
               navigation.navigate(RouteScreens.INSTRUCTORPROFILEMODEL)
             }>
-            <Text style={styles(selectedTheme).seeAllText}>
-              {buttons.FOLLOW}+
+            <Text style={styles(selectedTheme).followText}>
+              {buttons.FOLLOW} +
             </Text>
           </TouchableOpacity>
         </View>
-
-        <View style={styles(selectedTheme).seperator} />
-
+      </View>
+      <View style={styles(selectedTheme).seperator} />
+      <View style={styles(selectedTheme).conatiner}>
         <View>
           {DATA.videos.map((item, index) => {
             return (
@@ -91,13 +92,15 @@ const CourseChapterScreen = (props: Corselistingprops) => {
                     <Text style={styles(selectedTheme).title}>
                       {item.title}
                     </Text>
-                    <Text style={styles(selectedTheme).time}>
+                    <Text style={styles(selectedTheme).timeText}>
                       {item.duration}
                     </Text>
                   </View>
                 </View>
                 <View style={styles(selectedTheme).buttonContainer}>
-                  <Text style={styles(selectedTheme).time}>{item.size}</Text>
+                  <Text style={styles(selectedTheme).timeText}>
+                    {item.size}
+                  </Text>
                   <TouchableOpacity>
                     <Image
                       source={Icon.DOWNLOAD}
@@ -110,10 +113,8 @@ const CourseChapterScreen = (props: Corselistingprops) => {
           })}
         </View>
 
-        <View style={styles(selectedTheme).seperator} />
-
         <View style={styles(selectedTheme).itemContainer}>
-          <Text style={styles(selectedTheme).thirdContainerTextTitle}>
+          <Text style={styles(selectedTheme).popularCoursesText}>
             {screensData.home.POPULARCOURSES}
           </Text>
           <TouchableOpacity style={styles(selectedTheme).seeAllButton}>
@@ -130,6 +131,7 @@ const CourseChapterScreen = (props: Corselistingprops) => {
                 key={index}
                 navigation={navigation}
                 item={item}
+                index={index}
                 isfavourite={isfavourite}
                 setisfavourite={setisfavourite}
               />

@@ -5,8 +5,8 @@ const screensData = {
   membership: {
     NAME: 'Membership',
     HEADER: 'Unlimited Study Anytime, Anywhere',
-    DATA: 'Choose A Plan',
-    BEST_DEAL: 'Best Deal',
+    DATA: 'Choose a plan',
+    BEST_OFFER: 'Best Offer',
   },
 
   filter: {
@@ -14,10 +14,10 @@ const screensData = {
     CLASSTYPE: 'Class Type',
     CLASSLEVEL: 'Class Level',
     CREATEDWITHIN: 'Created Within',
-    CLASSTIME: 'Class Time',
+    CLASSLENGTH: 'Class Length',
   },
   search: {
-    PLACEHOLDER: 'Search for Topic,Courses & Educations',
+    PLACEHOLDER: 'Search for Topics, Courses & Educators',
     TOPSEARCHES: 'Top Searches',
     BROWSECATEGORIES: 'Browse Categories',
     NO_DATA_PRESENT: 'No data present!',
@@ -37,20 +37,21 @@ const screensData = {
     DES: 'React-Native Developer',
     ABOUTME: 'About Me',
     BIO: "Hi everyone this is Alex i'm a react native learner and now I'm working on a Demo project for the practice",
-    STUDENTREVIEW: 'Student Review',
+    STUDENTREVIEW: 'Student Reviews',
     CONNECTHERE: 'Connect Here',
-    STUDENTRATING: '',
+    STUDENTRATING: 'Student Rating',
     STUDENTSATISFIED: 'Student satisfied with courses',
     STUDENTPROGRESS: {},
+    MYCOURSES: 'My Courses (4)',
   },
   Profile: {
-    name: 'Profile',
-    Overallprogress: 'Overall progress',
-    percentage: '90 %',
+    NAME: 'Profile',
+    OVERALLPROGRESS: 'Overall Progress',
+    PERCENTAGE: '90 %',
   },
   courseDiscussion: {
     REPLY: 'Reply',
-    LIKE: 'LIKE',
+    LIKE: 'Like',
   },
   courseFile: {
     STUDENTS: 'Students',

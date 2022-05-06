@@ -26,8 +26,7 @@ const MultiSliders = (props: Sliderprops) => {
         backgroundColor: COLORS.primary,
       }}
       trackStyle={{
-        height: 5,
-        borderRadius: 10,
+        height: 3,
         backgroundColor: COLORS.gray10,
       }}
       minMarkerOverlapDistance={50}
@@ -38,10 +37,10 @@ const MultiSliders = (props: Sliderprops) => {
             <Text
               style={{
                 marginTop: 5,
-                color: selectedTheme.textgray8Ngray4,
+                color: selectedTheme.textblackNgray,
                 ...FONTS.body,
               }}>
-              {prifix} {e.currentValue} {postfix}
+              {prifix}{e.currentValue} {postfix}
             </Text>
           </View>
         );

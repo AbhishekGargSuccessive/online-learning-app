@@ -60,6 +60,7 @@ const Icon = {
   NEUTRAL: require('../assets/icons/neutral.png'),
   SAD: require('../assets/icons/sad.png'),
   GALLERY: require('../assets/icons/gallery.png'),
+  CHECK: require('../assets/icons/check.png'),
 };
 
 export {Icon};

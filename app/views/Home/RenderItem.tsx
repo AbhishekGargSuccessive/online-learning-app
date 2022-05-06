@@ -26,10 +26,11 @@ interface renderItem {
   isfavourite: any;
   setisfavourite: any;
   navigation: any;
+  index: number;
 }
 
 const RenderItem = (props: renderItem) => {
-  const {item, setisfavourite, isfavourite, navigation} = props;
+  const {item, setisfavourite, isfavourite, navigation, index} = props;
   return (
     <TouchableOpacity
       onPress={() =>
@@ -93,7 +94,7 @@ const RenderItem = (props: renderItem) => {
           </View>
         </View>
       </View>
-      <View style={styles(selectedTheme).seperator} />
+      {index != 5 && <View style={styles(selectedTheme).seperator} />}
     </TouchableOpacity>
   );
 };

@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {COLORS} from '../../config/Themes';
+import {COLORS, SIZES} from '../../config/Themes';
 
 const style = StyleSheet.create({
   container: {
@@ -7,12 +7,11 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
   subcontainer: {
-    height: 25,
-    width: 25,
-    borderRadius: 15,
-    borderWidth: 4,
+    height: 20,
+    width: 20,
+    borderRadius: SIZES.radius,
+    borderWidth: 3,
     borderColor: COLORS.primary,
     backgroundColor: COLORS.white,
     shadowColor: 'black',

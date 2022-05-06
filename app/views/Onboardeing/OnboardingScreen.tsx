@@ -1,7 +1,7 @@
 import React, {memo, useRef} from 'react';
-import {Animated, SafeAreaView, View} from 'react-native';
+import {Animated, SafeAreaView, StatusBar, View} from 'react-native';
 import {Constant} from '../../config';
-import {selectedTheme, SIZES} from '../../config/Themes';
+import {COLORS, selectedTheme, SIZES} from '../../config/Themes';
 import {NavigationDataTypes} from '../../models';
 import RenderItems from './Renderitem';
 import styles from './style';
@@ -35,6 +35,7 @@ const OnboardingScreen = (props: NavigationDataTypes) => {
 
     return (
       <View style={styles(selectedTheme).dotsContainer}>
+        <StatusBar backgroundColor={COLORS.additionalColor13} barStyle={'dark-content'} />
         {onBoardings.map((item, index) => {
           const dotSize = dotPosition.interpolate({
             inputRange: [index - 1, index, index + 1],

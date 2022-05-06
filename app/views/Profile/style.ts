@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {COLORS} from '../../config/Themes';
+import {COLORS, FONTS, SIZES} from '../../config/Themes';
 
 const styles = (selectedTheme: any) =>
   StyleSheet.create({
@@ -7,7 +7,7 @@ const styles = (selectedTheme: any) =>
       flex: 1,
       backgroundColor: selectedTheme.backgroundwhiteNgray8,
       paddingHorizontal: 20,
-      paddingVertical: 20,
+      paddingVertical: 10,
     },
     mainSubContainer: {
       flex: 0.9,
@@ -15,30 +15,29 @@ const styles = (selectedTheme: any) =>
     headerContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
+      alignItems: 'center',
     },
     headerText: {
       fontSize: 28,
-      fontWeight: '700',
-      textAlignVertical: 'center',
+      ...FONTS.heading,
       color: selectedTheme.textblackNwhite,
     },
     headerIcons: {
       height: 25,
       width: 25,
       resizeMode: 'contain',
-      alignSelf: 'center',
       tintColor: selectedTheme.tintColor,
     },
     subContainer: {
       backgroundColor: selectedTheme.backgroundblueNgray9,
       padding: 20,
-      borderRadius: 20,
+      borderRadius: SIZES.radius,
     },
     profileIcon: {
       height: '100%',
       width: '100%',
       borderRadius: 40,
-      borderWidth: 1,
+      borderWidth: 1.5,
       borderColor: COLORS.white,
     },
     imageContainer: {
@@ -47,25 +46,25 @@ const styles = (selectedTheme: any) =>
       alignItems: 'center',
     },
     cameraIcon: {
-      height: 17,
-      width: 17,
+      height: 16,
+      resizeMode: 'contain',
     },
     learnButton: {
-      marginVertical: 10,
-      padding: 10,
+      marginTop: 20,
+      paddingVertical: 7,
+      paddingHorizontal: 16,
       backgroundColor: COLORS.white,
-      borderRadius: 30,
-      alignContent: 'center',
+      borderRadius: 40,
       alignSelf: 'center',
     },
     learnButtonText: {
       alignSelf: 'center',
       color: COLORS.primary,
-      fontWeight: '700',
+      ...FONTS.heading,
     },
     icon: {
-      width: 20,
-      height: 20,
+      width: 25,
+      height: 25,
       resizeMode: 'contain',
       alignSelf: 'center',
       tintColor: COLORS.primary,
@@ -73,12 +72,13 @@ const styles = (selectedTheme: any) =>
     username: {
       color: COLORS.white,
       fontSize: 22,
-      fontWeight: '700',
-      width: 200,
+      width: 225,
+      ...FONTS.heading,
     },
     body: {
       color: COLORS.white,
       fontSize: 15,
+      ...FONTS.body,
     },
     progressBar: {
       marginVertical: 10,
@@ -90,6 +90,7 @@ const styles = (selectedTheme: any) =>
     progressText: {
       color: COLORS.white,
       fontSize: 14,
+      ...FONTS.body,
     },
     imageContainerView: {
       position: 'absolute',
@@ -99,8 +100,8 @@ const styles = (selectedTheme: any) =>
       justifyContent: 'flex-end',
     },
     imageViewContainer: {
-      width: 30,
-      height: 30,
+      width: 32,
+      height: 32,
       marginBottom: -15,
       alignItems: 'center',
       justifyContent: 'center',
@@ -111,9 +112,9 @@ const styles = (selectedTheme: any) =>
       paddingLeft: 10,
     },
     userDataContainer: {
-      borderRadius: 20,
-      borderWidth: 2,
-      borderColor: COLORS.primary,
+      borderRadius: SIZES.radius,
+      borderWidth: 1,
+      borderColor: COLORS.gray10,
       marginVertical: 20,
       padding: 20,
     },
@@ -132,20 +133,32 @@ const styles = (selectedTheme: any) =>
       justifyContent: 'center',
       alignSelf: 'flex-end',
     },
+    rightArrowIcon: {
+      width: 18,
+      height: 18,
+      resizeMode: 'contain',
+      alignSelf: 'center',
+      tintColor: COLORS.black,
+    },
+    lableData: {
+      fontSize: 16,
+      ...FONTS.heading,
+      color: selectedTheme.textblackNwhite,
+    },
     itemSeperator: {
-      borderBottomWidth: 1,
+      borderBottomWidth: 2,
       marginVertical: 20,
-      borderColor: selectedTheme.borderColor2,
+      borderColor: selectedTheme.lineDivider,
     },
     label: {
       fontSize: 16,
-      fontWeight: '700',
-      color: selectedTheme.textblackNwhite,
+      ...FONTS.body,
+      color: selectedTheme.textblackNgray3,
     },
     value: {
-      fontSize: 14,
-      fontWeight: '500',
-      color: selectedTheme.textgray8Ngray4,
+      fontSize: 17,
+      ...FONTS.heading,
+      color: selectedTheme.textblackNwhite,
     },
     drawerContainer: {
       flex: 1,

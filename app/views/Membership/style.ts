@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import {selectedTheme, COLORS, FONTS} from '../../config/Themes';
+import {selectedTheme, COLORS, FONTS, SIZES} from '../../config/Themes';
 
 const styles = (selectedTheme: any) =>
   StyleSheet.create({
@@ -17,21 +17,22 @@ const styles = (selectedTheme: any) =>
       borderTopLeftRadius: 20,
     },
     headContentContainer: {
-      paddingHorizontal: 20,
-      paddingVertical: 20,
+      marginHorizontal: 20,
+      marginVertical: 10,
     },
     header: {
       flexDirection: 'row',
       justifyContent: 'space-between',
+      width: SIZES.width * 0.6,
     },
     leftButton: {
       justifyContent: 'center',
+      alignItems: 'center',
     },
     headerLeftIcon: {
-      height: 40,
-      width: 40,
+      height: 35,
+      width: 35,
       resizeMode: 'contain',
-      alignSelf: 'center',
       tintColor: COLORS.white,
     },
     renderView: {
@@ -54,38 +55,35 @@ const styles = (selectedTheme: any) =>
       borderWidth: 1,
     },
     bestDeals: {
-      backgroundColor: COLORS.primary,
+      backgroundColor: COLORS.primary2,
       color: COLORS.white,
       borderTopLeftRadius: 20,
       borderBottomLeftRadius: 20,
       textAlignVertical: 'center',
-      padding: 10,
-      ...FONTS.heading,
-      fontWeight: '700',
+      paddingHorizontal: 10,
+      paddingVertical: 5,
+      marginTop: 6,
+      ...FONTS.body,
     },
     button: {
       borderRadius: 90,
       backgroundColor: COLORS.primary,
       alignItems: 'center',
-      padding: 10,
-      marginVertical: 20,
+      paddingVertical:14
     },
     buttonText: {
-      fontSize: 17,
+      fontSize: 16,
       color: selectedTheme.textwhite,
-      fontWeight: '800',
       ...FONTS.heading,
     },
     headerText: {
-      fontSize: 17,
-      fontWeight: '700',
-      marginVertical: 20,
+      fontSize: 20,
       color: COLORS.white,
       ...FONTS.heading,
+      alignSelf: 'center',
     },
     text: {
-      fontSize: 25,
-      fontWeight: '700',
+      fontSize: 30,
       marginVertical: 20,
       color: COLORS.white,
       ...FONTS.heading,
@@ -95,10 +93,10 @@ const styles = (selectedTheme: any) =>
       marginVertical: 20,
     },
     item: {
-      borderWidth: 0.5,
       flex: 1,
-      margin: 4,
-      borderRadius: 10,
+      borderWidth: 0.5,
+      margin: 8,
+      borderRadius: SIZES.radius,
       height: Dimensions.get('window').width / 2,
     },
     itemInvisible: {
@@ -107,13 +105,12 @@ const styles = (selectedTheme: any) =>
     itemText: {
       fontSize: 14,
       color: selectedTheme.textblackNwhite,
-      width: 100,
       textAlignVertical: 'center',
       ...FONTS.body,
+      marginTop: 8,
     },
     itemBigText: {
-      fontSize: 22,
-      fontWeight: '700',
+      fontSize: 20,
       ...FONTS.heading,
       color: selectedTheme.textblackNwhite,
     },

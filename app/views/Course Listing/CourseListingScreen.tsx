@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useRef} from 'react';
 import {
   Text,
   View,
@@ -85,7 +85,7 @@ const CourseListingScreen = (props: Corselistingprops) => {
     setisfavourite,
   } = props;
 
-  const scrollY = new Animated.Value(0);
+  const scrollY = useRef(new Animated.Value(0)).current;
   const diffclamp = Animated.diffClamp(scrollY, 0, 50);
   const translateY = diffclamp.interpolate({
     inputRange: [0, 50],
@@ -95,9 +95,7 @@ const CourseListingScreen = (props: Corselistingprops) => {
   return (
     <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <Animated.View
-        style={{
-          transform: [{translateY: translateY}],
-        }}>
+        style={{zIndex: 20, transform: [{translateY: translateY}]}}>
         <View style={styles(selectedTheme).headerContainer}>
           <Animated.Image
             source={Images.BG_1}
@@ -141,10 +139,11 @@ const CourseListingScreen = (props: Corselistingprops) => {
           data={DATA}
           showsVerticalScrollIndicator={false}
           keyExtractor={(item, index) => item + index.toString()}
-          renderItem={({item}) => (
+          renderItem={({item, index}) => (
             <RenderItem
               navigation={navigation}
               item={item}
+              index={index}
               isfavourite={isfavourite}
               setisfavourite={setisfavourite}
             />
@@ -162,152 +161,153 @@ const CourseListingScreen = (props: Corselistingprops) => {
         onRequestClose={() => {
           setModalVisible(!modalVisible);
         }}>
-        <View style={styles(selectedTheme).view} />
-
-        <View style={styles(selectedTheme).modalView}>
-          <View style={styles(selectedTheme).modalTextContainer}>
-            <Text style={styles(selectedTheme).modalText}>
-              {screensData.filter.FILTER}
-            </Text>
-            <TouchableOpacity
-              onPress={() => {
-                setModalVisible(false), Resetfilter();
-              }}
-              style={styles(selectedTheme).crossImageConatainer}>
-              <Text style={styles(selectedTheme).modalSubText}>
-                {buttons.CANCEL}
+        <View style={styles(selectedTheme).modalViewContainer}>
+          <View style={styles(selectedTheme).modalView}>
+            <View style={styles(selectedTheme).modalTextContainer}>
+              <Image
+                source={Icon.FILTER}
+                style={styles(selectedTheme).filterModalImage}
+              />
+              <Text style={styles(selectedTheme).filterText}>
+                {screensData.filter.FILTER}
               </Text>
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles(selectedTheme).distanceContainer}>
-            <Text style={styles(selectedTheme).modalSubText}>
-              {screensData.filter.CLASSTYPE}
-            </Text>
-            <FlatList
-              data={Classtypedata}
-              extraData={Classtypedata}
-              renderItem={({item, index}) => (
-                <Renderitem
-                  item={item}
-                  index={index}
-                  defaultitem={defaultitem}
-                  setdefaultitem={setdefaultitem}
-                />
-              )}
-              numColumns={3}
-              keyExtractor={(_, index) => index.toString()}
-            />
-          </View>
-          <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={styles(selectedTheme).distanceContainer}>
-              <Text style={styles(selectedTheme).modalSubText}>
-                {screensData.filter.CLASSLEVEL}
-              </Text>
-              {ClassLevel.map((item, index) => {
-                return (
-                  <View
-                    key={index}
-                    style={styles(selectedTheme).classLevelContainer}>
-                    <TouchableOpacity
-                      style={styles(selectedTheme).classLevelbutton}
-                      onPress={() => {
-                        setdefaultclasslevel(item.id),
-                          setclassleveldata(item.label);
-                      }}>
-                      <Text style={styles(selectedTheme).time}>
-                        {item.label}
-                      </Text>
-                      <Image
-                        source={
-                          defaultclasslevel == item.id
-                            ? Icon.CHECKBOX_ON
-                            : Icon.CHECKBOX_OFF
-                        }
-                        style={styles(selectedTheme).smallIcon}
-                      />
-                    </TouchableOpacity>
-                    {index != 2 ? (
-                      <View style={styles(selectedTheme).levelSeperator} />
-                    ) : null}
-                  </View>
-                );
-              })}
+              <TouchableOpacity
+                onPress={() => {
+                  setModalVisible(false), Resetfilter();
+                }}>
+                <Text style={styles(selectedTheme).cancelText}>
+                  {buttons.CANCEL}
+                </Text>
+              </TouchableOpacity>
             </View>
+
             <View style={styles(selectedTheme).distanceContainer}>
               <Text style={styles(selectedTheme).modalSubText}>
-                {screensData.filter.CREATEDWITHIN}
+                {screensData.filter.CLASSTYPE}
               </Text>
-              <View style={styles(selectedTheme).cretedWithInContainer}>
-                {CreatedWithin.map((item, index) => {
+              <FlatList
+                data={Classtypedata}
+                extraData={Classtypedata}
+                renderItem={({item, index}) => (
+                  <Renderitem
+                    item={item}
+                    index={index}
+                    defaultitem={defaultitem}
+                    setdefaultitem={setdefaultitem}
+                  />
+                )}
+                numColumns={3}
+                keyExtractor={(_, index) => index.toString()}
+              />
+            </View>
+            <ScrollView showsVerticalScrollIndicator={false}>
+              <View style={styles(selectedTheme).distanceContainer}>
+                <Text style={styles(selectedTheme).modalSubText}>
+                  {screensData.filter.CLASSLEVEL}
+                </Text>
+                {ClassLevel.map((item, index) => {
                   return (
                     <View
                       key={index}
-                      style={[
-                        styles(selectedTheme).createdContainer,
-                        {
-                          backgroundColor:
-                            defaultcreatedwithin == item.id
-                              ? selectedTheme.backgroundblueNblack
-                              : selectedTheme.backgroundwhite3Ngray8,
-                        },
-                      ]}>
+                      style={styles(selectedTheme).classLevelContainer}>
                       <TouchableOpacity
                         style={styles(selectedTheme).classLevelbutton}
-                        onPress={() => setdefaultcreatedwithin(item.id)}>
-                        <Text
-                          style={[
-                            {
-                              color:
-                                defaultcreatedwithin == item.id
-                                  ? COLORS.white
-                                  : selectedTheme.textblackNwhite,
-                            },
-                          ]}>
+                        onPress={() => {
+                          setdefaultclasslevel(item.id),
+                            setclassleveldata(item.label);
+                        }}>
+                        <Text style={styles(selectedTheme).time}>
                           {item.label}
                         </Text>
+                        <Image
+                          source={
+                            defaultclasslevel == item.id
+                              ? Icon.CHECKBOX_ON
+                              : Icon.CHECKBOX_OFF
+                          }
+                          style={styles(selectedTheme).smallIcon}
+                        />
                       </TouchableOpacity>
+                      {index != 2 ? (
+                        <View style={styles(selectedTheme).levelSeperator} />
+                      ) : null}
                     </View>
                   );
                 })}
               </View>
-            </View>
-            <View style={styles(selectedTheme).distanceContainer}>
-              <Text style={styles(selectedTheme).modalSubText}>
-                {screensData.filter.CLASSTIME}
-              </Text>
-              <MultiSliders
-                values={[20, 50]}
-                min={10}
-                max={60}
-                postfix="Min"
-                onValueChange={(values: any) => setduration(values)}
-                prifix={''}
-              />
-            </View>
-          </ScrollView>
+              <View style={styles(selectedTheme).distanceContainer}>
+                <Text style={styles(selectedTheme).modalSubText}>
+                  {screensData.filter.CREATEDWITHIN}
+                </Text>
+                <View style={styles(selectedTheme).createdWithInContainer}>
+                  {CreatedWithin.map((item, index) => {
+                    return (
+                      <View
+                        key={index}
+                        style={[
+                          styles(selectedTheme).createdContainer,
+                          {
+                            backgroundColor:
+                              defaultcreatedwithin == item.id
+                                ? selectedTheme.backgroundblueNblack
+                                : selectedTheme.backgroundwhiteNgreen,
+                          },
+                        ]}>
+                        <TouchableOpacity
+                          onPress={() => setdefaultcreatedwithin(item.id)}>
+                          <Text
+                            style={[
+                              {
+                                color:
+                                  defaultcreatedwithin == item.id
+                                    ? COLORS.white
+                                    : selectedTheme.textblackNwhite,
+                                fontSize: 15,
+                              },
+                            ]}>
+                            {item.label}
+                          </Text>
+                        </TouchableOpacity>
+                      </View>
+                    );
+                  })}
+                </View>
+              </View>
+              <View style={styles(selectedTheme).distanceContainer}>
+                <Text style={styles(selectedTheme).modalSubText}>
+                  {screensData.filter.CLASSLENGTH}
+                </Text>
+                <MultiSliders
+                  values={[20, 50]}
+                  min={10}
+                  max={60}
+                  postfix="Min"
+                  onValueChange={(values: any) => setduration(values)}
+                  prifix={''}
+                />
+              </View>
+            </ScrollView>
 
-          <View style={styles(selectedTheme).filterButtonContainer}>
-            <TouchableOpacity
-              style={styles(selectedTheme).restButton}
-              onPress={() => {
-                setModalVisible(false), Resetfilter();
-                //   setfilterdata(true)
-              }}>
-              <Text style={styles(selectedTheme).resetText}>
-                {buttons.RESET}
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles(selectedTheme).button}
-              onPress={() => {
-                setModalVisible(false);
-                //   setfilterdata(true)
-              }}>
-              <Text style={styles(selectedTheme).buttonText}>
-                {buttons.APPLY}
-              </Text>
-            </TouchableOpacity>
+            <View style={styles(selectedTheme).filterButtonContainer}>
+              <TouchableOpacity
+                style={styles(selectedTheme).resetButton}
+                onPress={() => {
+                  setModalVisible(false), Resetfilter();
+                }}>
+                <Text style={styles(selectedTheme).resetText}>
+                  {buttons.RESET}
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles(selectedTheme).button}
+                onPress={() => {
+                  setModalVisible(false);
+                }}>
+                <Text style={styles(selectedTheme).buttonText}>
+                  {buttons.APPLY}
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </Modal>

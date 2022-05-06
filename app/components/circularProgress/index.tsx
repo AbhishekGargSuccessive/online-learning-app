@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import {COLORS} from '../../config/Themes';
+import {COLORS, FONTS} from '../../config/Themes';
 /**
  * Override styles that get passed from props
  **/
@@ -56,17 +56,18 @@ const styles = StyleSheet.create({
     borderColor: COLORS.gray20,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: COLORS.white,
   },
   display: {
     position: 'absolute',
     fontSize: 15,
-    fontWeight: 'bold',
-    color: COLORS.gray10,
+    color: COLORS.black,
+    ...FONTS.heading,
   },
   firstProgressLayer: {
     width: 60,
     height: 60,
-    borderWidth: 10,
+    borderWidth: 8,
     borderRadius: 100,
     position: 'absolute',
     borderLeftColor: 'transparent',

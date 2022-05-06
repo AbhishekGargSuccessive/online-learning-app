@@ -243,6 +243,7 @@ const HomeScreen = (props: Homepageprops) => {
                   navigation={navigation}
                   key={index}
                   item={item}
+                  index={index}
                   isfavourite={isfavourite}
                   setisfavourite={setisfavourite}
                 />

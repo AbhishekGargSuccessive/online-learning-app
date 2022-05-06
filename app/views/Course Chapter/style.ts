@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {COLORS} from '../../config/Themes';
+import {COLORS, FONTS} from '../../config/Themes';
 
 const styles = (selectedTheme: any) =>
   StyleSheet.create({
@@ -11,8 +11,8 @@ const styles = (selectedTheme: any) =>
       paddingVertical: 20,
     },
     profileIcon: {
-      height: 40,
-      width: 40,
+      height: 50,
+      width: 50,
       borderRadius: 90,
       alignSelf: 'center',
       marginRight: 10,
@@ -20,24 +20,33 @@ const styles = (selectedTheme: any) =>
     conatiner: {
       flex: 1,
       marginHorizontal: 20,
-      marginVertical: 20,
+      marginVertical: 10,
     },
     studentData: {
       flexDirection: 'row',
+      marginTop: 10,
     },
     userTitle: {
-      fontSize: 22,
+      fontSize: 24,
       color: selectedTheme.textblackNgray,
-      fontWeight: '700',
+      ...FONTS.heading,
     },
     profileContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
     },
     smallText: {
-      fontSize: 14,
+      fontSize: 15,
       color: selectedTheme.textgray8Ngray4,
-      marginRight: 5,
+      marginRight: 10,
+    },
+    timeIcon: {
+      height: 15,
+      width: 15,
+      alignSelf: 'center',
+      resizeMode: 'contain',
+      tintColor: COLORS.gray40,
+      marginRight: 6,
     },
     subProfileContainer: {
       flexDirection: 'row',
@@ -51,18 +60,17 @@ const styles = (selectedTheme: any) =>
       flexDirection: 'row',
     },
     videoIcon: {
-      width: 20,
-      height: 20,
+      width: 14,
+      height: 14,
       resizeMode: 'contain',
       alignSelf: 'center',
-      borderRadius: 90,
     },
     buttonContainer: {
       flexDirection: 'row',
     },
     downloadIcon: {
-      width: 20,
-      height: 20,
+      width: 24,
+      height: 24,
       resizeMode: 'contain',
       alignSelf: 'center',
       marginLeft: 5,
@@ -71,12 +79,25 @@ const styles = (selectedTheme: any) =>
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+      marginTop: 20,
+      marginBottom: 20,
     },
-    thirdContainerTextTitle: {
-      fontSize: 21,
-      width: 200,
-      fontWeight: '700',
+    popularCoursesText: {
+      fontSize: 22,
       color: selectedTheme.textblackNwhite,
+      ...FONTS.heading,
+    },
+    seeAllButton: {
+      borderRadius: 20,
+      backgroundColor: COLORS.primary,
+      alignSelf: 'center',
+      paddingHorizontal: 14,
+      paddingVertical: 6,
+    },
+    seeAllText: {
+      color: COLORS.white,
+      fontSize: 15,
+      ...FONTS.heading,
     },
     headerLeftIcon: {
       height: 30,
@@ -86,29 +107,41 @@ const styles = (selectedTheme: any) =>
       tintColor: selectedTheme.tintColor,
     },
     title: {
-      width: 200,
-      fontSize: 18,
-      fontWeight: '700',
+      fontSize: 16,
       color: selectedTheme.textblackNwhite,
+      ...FONTS.heading,
     },
-    time: {
-      color: selectedTheme.textblackNgray4,
+    timeText: {
+      color: selectedTheme.textgray8Ngray4,
+      ...FONTS.body,
+      fontSize: 14,
+    },
+    userNameText: {
+      color: selectedTheme.textblackNgray,
+      ...FONTS.heading,
+      fontSize: 18,
+    },
+    programmerText: {
+      color: selectedTheme.textblackNgray,
+      ...FONTS.body,
+      fontSize: 16,
     },
     seperator: {
       borderBottomWidth: 0.5,
       borderColor: selectedTheme.borderColor2,
-      marginVertical: 20,
+      marginVertical: 10,
     },
-    seeAllButton: {
-      padding: 9,
+    followButton: {
       borderRadius: 20,
       backgroundColor: COLORS.primary,
       alignSelf: 'center',
+      paddingHorizontal: 14,
+      paddingVertical: 10,
     },
-    seeAllText: {
+    followText: {
       color: COLORS.white,
-      fontSize: 12,
-      fontWeight: '700',
+      fontSize: 15,
+      ...FONTS.heading,
     },
     playButton: {
       height: 35,

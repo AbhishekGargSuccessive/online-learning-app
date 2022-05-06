@@ -84,6 +84,8 @@ export const darkTheme = {
   tintColor: COLORS.white,
   dotColor1: COLORS.white,
   dotColor2: COLORS.primary,
+  RED: COLORS.secondary,
+  TRANSPARENTBLACK: COLORS.transparentBlack7,
 };
 
 export const lightTheme = {
@@ -110,6 +112,8 @@ export const lightTheme = {
   tintColor: COLORS.black,
   dotColor1: COLORS.gray20,
   dotColor2: COLORS.primary3,
+  RED: COLORS.secondary,
+  TRANSPARENTBLACK: COLORS.transparentBlack7,
 };
 
 export let selectedTheme = lightTheme;

@@ -13,12 +13,6 @@ const Homemodel = (props: NavigationDataTypes) => {
 
   const themeData = useSelector<DefaultRootStat>(state => state.Data);
 
-  // const [forceRednder,setForceRender]=useState(false);
-  // useEffect(() => {
-  //   setForceRender(!forceRednder)
-  // }, [Userdata])
-  
-
   const [seeall, setseeall] = useState(false);
   const [isfavourite, setisfavourite] = useState([]);
   let courselist2 = DummyData.coursesList2;

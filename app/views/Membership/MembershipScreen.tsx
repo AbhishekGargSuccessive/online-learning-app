@@ -2,6 +2,7 @@ import React, {memo} from 'react';
 import {
   FlatList,
   Image,
+  Pressable,
   SafeAreaView,
   Text,
   TouchableOpacity,
@@ -38,7 +39,6 @@ const MembershipScreen = (props: CategoryProps) => {
           <Text style={styles(selectedTheme).headerText}>
             {screensData.membership.NAME}
           </Text>
-          <Text></Text>
         </View>
         <Text style={styles(selectedTheme).text}>
           {screensData.membership.HEADER}
@@ -46,7 +46,7 @@ const MembershipScreen = (props: CategoryProps) => {
       </View>
 
       <View style={styles(selectedTheme).container}>
-        <Text style={[styles(selectedTheme).itemBigText]}>
+        <Text style={styles(selectedTheme).itemBigText}>
           {screensData.membership.DATA}
         </Text>
 
@@ -71,7 +71,7 @@ const MembershipScreen = (props: CategoryProps) => {
             style={styles(selectedTheme).button}
             onPress={() => navigation.navigate(RouteScreens.ROOTTAB)}>
             <Text style={styles(selectedTheme).buttonText}>
-              {buttons.STARTFREETRAIL}{' '}
+              {buttons.STARTFREETRAIL}
             </Text>
           </TouchableOpacity>
         </View>

@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import {selectedTheme, COLORS, FONTS} from '../../config/Themes';
+import {selectedTheme, COLORS, FONTS, SIZES} from '../../config/Themes';
 
 const styles = (selectedTheme: any) =>
   StyleSheet.create({
@@ -28,8 +28,8 @@ const styles = (selectedTheme: any) =>
       justifyContent: 'center',
     },
     headerLeftIcon: {
-      height: 30,
-      width: 30,
+      height: 35,
+      width: 35,
       resizeMode: 'contain',
       alignSelf: 'center',
       tintColor: COLORS.white,
@@ -55,7 +55,6 @@ const styles = (selectedTheme: any) =>
       width: 40,
       resizeMode: 'contain',
       borderRadius: 90,
-      borderWidth: 1,
     },
     bestDeals: {
       backgroundColor: COLORS.primary,
@@ -102,6 +101,7 @@ const styles = (selectedTheme: any) =>
       alignItems: 'center',
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
+      elevation: 3,
     },
 
     studentReviewText: {
@@ -113,10 +113,20 @@ const styles = (selectedTheme: any) =>
     },
 
     progressContainer: {
-      padding: 10,
-      backgroundColor: COLORS.gray10,
+      margin: 1,
+      paddingHorizontal: 10,
+      paddingBottom: 10,
+      backgroundColor: COLORS.white,
+      marginTop: 10,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 4,
+      },
+      shadowOpacity: 0.3,
+      shadowRadius: 4.65,
+      elevation: 4,
     },
-
     progressBar: {
       marginVertical: 10,
     },
@@ -132,11 +142,12 @@ const styles = (selectedTheme: any) =>
       width: 20,
       resizeMode: 'contain',
       marginRight: 5,
+      alignSelf: 'center',
     },
     progressText: {
-      fontSize: 17,
-      fontWeight: '600',
-      color: selectedTheme.textblackNgray4,
+      fontSize: 16,
+      color: selectedTheme.textblackNwhite,
+      ...FONTS.heading,
     },
     imageContainer: {
       width: 80,
@@ -146,10 +157,11 @@ const styles = (selectedTheme: any) =>
       marginTop: -35,
       alignSelf: 'center',
     },
-    camerIcon: {
-      height: 10,
-      width: 15,
-      tintColor: COLORS.white,
+    rightIcon: {
+      height: 25,
+      width: 25,
+      resizeMode: 'contain',
+      tintColor: '#0065fd',
     },
     imageContainerView: {
       position: 'absolute',
@@ -161,42 +173,40 @@ const styles = (selectedTheme: any) =>
     imageViewContainer: {
       width: 25,
       height: 25,
-      marginBottom: -15,
+      marginBottom: -12,
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: 15,
-      backgroundColor: 'blue',
+      backgroundColor: COLORS.white,
     },
     profileIcon: {
       height: '100%',
       width: '100%',
       borderRadius: 40,
-      borderWidth: 1,
-      borderColor: COLORS.white,
     },
     followButton: {
       marginVertical: 5,
       paddingHorizontal: 10,
       paddingVertical: 5,
       borderColor: COLORS.primary,
-      borderWidth: 2,
+      borderWidth: 1,
       borderRadius: 20,
     },
     followButtonText: {
       color: COLORS.primary,
-      fontWeight: '700',
       ...FONTS.heading,
     },
     username: {
       color: selectedTheme.textblackNwhite,
       fontSize: 22,
-      fontWeight: '700',
       width: 200,
       textAlign: 'center',
+      ...FONTS.heading,
     },
     body: {
       color: selectedTheme.textblackNwhite,
       fontSize: 15,
+      ...FONTS.body,
     },
     itemTextContainer: {
       marginLeft: 10,
@@ -208,8 +218,8 @@ const styles = (selectedTheme: any) =>
       alignItems: 'center',
     },
     seeAllButton: {
-      padding: 5,
-      paddingHorizontal: 10,
+      paddingVertical: 7,
+      paddingHorizontal: 14,
       borderRadius: 20,
       backgroundColor: COLORS.primary,
       alignSelf: 'center',
@@ -217,18 +227,18 @@ const styles = (selectedTheme: any) =>
     seeAllText: {
       color: COLORS.white,
       fontSize: 12,
-      fontWeight: '700',
+      ...FONTS.heading,
     },
-    thirdContainerTextTitle: {
+    studentRatingText: {
       marginVertical: 5,
-      fontSize: 21,
+      fontSize: 22,
       width: 200,
-      fontWeight: '700',
       color: selectedTheme.textblackNwhite,
+      ...FONTS.heading,
     },
     seperator: {
-      borderBottomWidth: 0.5,
-      borderColor: selectedTheme.borderColor2,
+      borderBottomWidth: 1,
+      borderColor: selectedTheme.lineDivider,
       marginVertical: 20,
     },
     smallIcon: {
@@ -238,8 +248,9 @@ const styles = (selectedTheme: any) =>
       alignSelf: 'center',
       tintColor: selectedTheme.tintColor,
     },
-    time: {
-      color: selectedTheme.textblackNgray4,
+    descriptionText: {
+      color: selectedTheme.TRANSPARENTBLACK,
+      ...FONTS.body,
     },
     socialbuttonIcon: {
       width: 30,
@@ -250,8 +261,8 @@ const styles = (selectedTheme: any) =>
     socialbutton: {
       flexDirection: 'row',
       padding: 10,
-      backgroundColor: selectedTheme.backgroundgray10Ngray70,
-      borderRadius: 10,
+      backgroundColor: selectedTheme.backgroundwhite1Ngray9,
+      borderRadius: SIZES.radius,
       marginVertical: 5,
       justifyContent: 'space-between',
     },
@@ -262,44 +273,54 @@ const styles = (selectedTheme: any) =>
     socialbuttonText: {
       fontSize: 15,
       paddingLeft: 5,
-      fontWeight: '600',
       color: selectedTheme.textblackNwhite,
       textAlignVertical: 'center',
+      ...FONTS.body,
     },
     reviewContainer: {
       flexDirection: 'row',
-      padding: 10,
+      padding: 20,
       marginLeft: 10,
-      borderRadius: 10,
+      borderRadius: 20,
       backgroundColor: selectedTheme.backgroundblueNgray9,
     },
     studentName: {
       fontSize: 16,
       width: 150,
-      fontWeight: '600',
-      marginVertical: 5,
+      marginTop: 6,
       color: COLORS.white,
+      ...FONTS.heading,
     },
     comment: {
       fontSize: 14,
       width: 150,
       color: COLORS.white,
+      ...FONTS.body,
     },
     postedOn: {
-      fontSize: 11,
+      fontSize: 12,
       width: 150,
-      marginVertical: 5,
+      marginTop: 10,
       color: COLORS.white,
+      ...FONTS.heading,
     },
     socialContainer: {
-      padding: 10,
+      padding: 12,
       backgroundColor: COLORS.gray10,
       marginLeft: 10,
       alignItems: 'center',
-      borderRadius: 10,
+      borderRadius: SIZES.radius,
       marginVertical: 10,
+      borderWidth: 1,
+      borderColor: COLORS.gray10,
     },
     labalText: {
+      color: COLORS.black,
+      ...FONTS.heading,
+      fontSize: 18,
+    },
+    lowerText: {
+      ...FONTS.heading,
       color: COLORS.black,
     },
   });

@@ -171,8 +171,8 @@ let styles = (selectedTheme: any) =>
       flexDirection: 'row',
     },
     seperator: {
-      borderBottomWidth: 0.5,
-      borderColor: selectedTheme.borderColor2,
+      borderBottomWidth: 1,
+      borderColor: selectedTheme.lineDivider,
       marginVertical: 20,
     },
     itemTextContainer: {

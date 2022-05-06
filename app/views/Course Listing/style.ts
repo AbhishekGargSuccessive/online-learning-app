@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import {COLORS} from '../../config/Themes';
+import {COLORS, FONTS, SIZES} from '../../config/Themes';
 
 const styles = (selectedTheme: any) =>
   StyleSheet.create({
@@ -14,12 +14,12 @@ const styles = (selectedTheme: any) =>
       height: '120%',
       width: '150%',
       position: 'absolute',
-      borderBottomLeftRadius: 40,
+      borderBottomLeftRadius: 60,
     },
     container: {
       flex: 1,
       marginHorizontal: 20,
-      marginVertical: 20,
+      marginVertical: 10,
     },
     leftButton: {
       height: 50,
@@ -41,27 +41,28 @@ const styles = (selectedTheme: any) =>
       justifyContent: 'space-between',
     },
     headerText: {
-      color: selectedTheme.textblackNwhite,
+      color: selectedTheme.textwhite,
       fontSize: 22,
-      fontWeight: '700',
       textAlignVertical: 'center',
-      marginVertical: 20,
+      marginVertical: 10,
+      ...FONTS.heading,
     },
     filterButton: {
       alignSelf: 'center',
       backgroundColor: COLORS.primary,
-      padding: 5,
-      borderRadius: 10,
+      paddingHorizontal: 10,
+      paddingVertical: 10,
+      borderRadius: SIZES.radius,
     },
     filterButtonText: {
       color: selectedTheme.textblackNwhite,
       fontSize: 17,
-      fontWeight: '700',
+      ...FONTS.body,
       textAlignVertical: 'center',
     },
     filterIcons: {
-      width: 25,
-      height: 25,
+      width: 22,
+      height: 22,
       resizeMode: 'contain',
       alignSelf: 'center',
       tintColor: COLORS.white,
@@ -91,51 +92,59 @@ const styles = (selectedTheme: any) =>
     },
 
     smallIcon: {
-      height: 15,
-      width: 15,
+      height: 20,
+      width: 26,
       resizeMode: 'contain',
       alignSelf: 'center',
     },
     time: {
-      color: selectedTheme.textblackNgray4,
+      color: selectedTheme.textblackNgray,
+      ...FONTS.body,
+      fontSize: 15,
     },
 
     modalView: {
-      flex: 1,
+      flex: 0.9,
       borderTopStartRadius: 20,
       borderTopEndRadius: 20,
       backgroundColor: selectedTheme.backgroundwhiteNgray8,
-      padding: 20,
       justifyContent: 'space-between',
+      padding: 20,
     },
     modalTextContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    filterModalImage: {
+      height: 22,
+      width: 22,
+      resizeMode: 'contain',
+      tintColor: COLORS.black,
     },
     distanceContainer: {
       marginVertical: 10,
     },
-    modalText: {
-      fontSize: 22,
+    filterText: {
+      fontSize: 26,
       color: selectedTheme.textblackNwhite,
-      fontWeight: '600',
+      ...FONTS.heading,
     },
     modalSubText: {
       fontSize: 16,
       color: selectedTheme.textblackNwhite,
-      fontWeight: '600',
+      ...FONTS.heading,
+    },
+    cancelText: {
+      fontSize: 15,
+      color: selectedTheme.textblackNwhite,
+      ...FONTS.body,
     },
 
-    crossImageConatainer: {
-      borderWidth: 0.5,
-      borderRadius: 5,
-      padding: 5,
-      borderColor: COLORS.gray10,
-    },
-
-    view: {
-      flex: 0.3,
-      backgroundColor: 'rgba(0,0,0,0.2)',
+    modalViewContainer: {
+      flex: 1,
+      backgroundColor: COLORS.transparentBlack7,
+      justifyContent: 'flex-end',
     },
 
     classLevelContainer: {
@@ -146,57 +155,58 @@ const styles = (selectedTheme: any) =>
       justifyContent: 'space-between',
     },
     levelSeperator: {
-      borderBottomWidth: 0.5,
-      borderColor: selectedTheme.borderColor2,
-      marginVertical: 5,
+      borderBottomWidth: 1,
+      borderColor: selectedTheme.lineDivider,
+      marginTop: 15,
     },
-    cretedWithInContainer: {
+    createdWithInContainer: {
       flexDirection: 'row',
       flexWrap: 'wrap',
     },
     createdContainer: {
       padding: 10,
-      marginRight: 5,
-      marginVertical: 5,
-      borderRadius: 10,
+      marginRight: 10,
+      marginTop: 10,
+      borderRadius: SIZES.radius,
+      borderColor: selectedTheme.lineDivider,
+      borderWidth: 1,
+    },
+    resetButton: {
+      backgroundColor: selectedTheme.backgroundwhiteNgreen,
+      borderRadius: SIZES.radius,
+      borderWidth: 1,
+      width: '48%',
+    },
+    resetText: {
+      padding: 12,
+      color: selectedTheme.textblackNwhite,
+      textAlign: 'center',
+      fontSize: 18,
+      ...FONTS.heading,
     },
     button: {
       backgroundColor: COLORS.primary,
-      borderRadius: 9,
-      width: '45%',
+      borderRadius: SIZES.radius,
+      width: '48%',
     },
-
     buttonText: {
       padding: 10,
       color: COLORS.white,
       textAlign: 'center',
-      fontWeight: '700',
-      fontSize: 19,
-    },
-    restButton: {
-      backgroundColor: selectedTheme.backgroundwhite1Ngray9,
-      borderRadius: 9,
-      borderWidth: 0.5,
-      width: '45%',
-    },
-    resetText: {
-      padding: 10,
-      color: selectedTheme.textblackNwhite,
-      textAlign: 'center',
-      fontWeight: '700',
-      fontSize: 19,
+      fontSize: 18,
+      ...FONTS.heading,
     },
     filterButtonContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
     },
     classTypeItem: {
+      flex: 1,
       borderWidth: 0.5,
+      margin: 4,
       alignItems: 'center',
       justifyContent: 'center',
-      flex: 1,
-      margin: 4,
-      borderRadius: 10,
+      borderRadius: SIZES.radius,
       height: Dimensions.get('window').width / 4,
     },
     icons: {
@@ -209,6 +219,8 @@ const styles = (selectedTheme: any) =>
     itemText: {
       fontSize: 14,
       color: selectedTheme.textblackNwhite,
+      ...FONTS.heading,
+      marginTop: 10,
     },
   });
 
