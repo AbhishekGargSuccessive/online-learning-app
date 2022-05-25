@@ -69,7 +69,7 @@ let styles = (selectedTheme: any) =>
       resizeMode: 'contain',
     },
     learnButton: {
-      padding: 15,
+      paddingVertical: 10,
       backgroundColor: COLORS.white,
       width: SIZES.width * 0.36,
       borderRadius: 30,
@@ -154,6 +154,7 @@ let styles = (selectedTheme: any) =>
       width: 15,
       resizeMode: 'contain',
       alignSelf: 'center',
+      tintColor:selectedTheme.textblackNwhite
     },
     time: {
       color: selectedTheme.textblackNgray4,
@@ -163,9 +164,9 @@ let styles = (selectedTheme: any) =>
     },
     ratings: {
       fontSize: 15,
-      fontWeight: '700',
       color: selectedTheme.textblackNwhite,
       textAlignVertical: 'center',
+      ...FONTS.body
     },
     notificationTitleContainer: {
       flexDirection: 'row',
@@ -191,7 +192,7 @@ let styles = (selectedTheme: any) =>
     subTitle: {
       fontSize: 20,
       ...FONTS.heading,
-      color: selectedTheme.textgreenNwhite,
+      color: COLORS.primary
     },
     ratingContainer: {
       flexDirection: 'row',

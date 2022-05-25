@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import {selectedTheme, COLORS, FONTS} from '../../config/Themes';
+import {selectedTheme, COLORS, FONTS, SIZES} from '../../config/Themes';
 
 const styles = (selectedTheme: any) =>
   StyleSheet.create({
@@ -41,7 +41,7 @@ const styles = (selectedTheme: any) =>
       borderRadius: 90,
       backgroundColor: COLORS.primary,
       alignItems: 'center',
-      padding: 10,
+      paddingVertical: 14,
       marginVertical: 20,
     },
     buttonText: {
@@ -52,9 +52,9 @@ const styles = (selectedTheme: any) =>
     },
     text: {
       fontSize: 25,
-      fontWeight: '700',
       marginVertical: 20,
       color: selectedTheme.textblackNwhite,
+      ...FONTS.heading,
     },
     flatlistContainer: {
       flex: 1,
@@ -65,8 +65,8 @@ const styles = (selectedTheme: any) =>
       alignItems: 'center',
       justifyContent: 'center',
       flex: 1,
-      margin: 4,
-      borderRadius: 10,
+      margin: 6,
+      borderRadius: SIZES.radius,
       height: Dimensions.get('window').width / 3,
     },
     itemInvisible: {

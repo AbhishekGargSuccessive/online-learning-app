@@ -11,7 +11,10 @@ export default function CommonButton(props: Buttonprops) {
   const {title, press} = props;
   return (
     <View>
-      <TouchableOpacity onPress={press} style={styles.container}>
+      <TouchableOpacity
+        testID="onpress"
+        onPress={press}
+        style={styles.container}>
         <Text style={styles.paragraph}>{title}</Text>
       </TouchableOpacity>
     </View>

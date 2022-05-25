@@ -36,7 +36,7 @@ const CategoryScreen = (props: CategoryProps) => {
           />
         </TouchableOpacity>
         <Text style={styles(selectedTheme).text}>
-          {screensData.home.CATEGORIES}
+        {screensData.categories.CHOOSECATEGORIES}
         </Text>
 
         <View style={styles(selectedTheme).flatlistContainer}>

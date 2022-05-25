@@ -51,7 +51,9 @@ const NotificationTab = (props: NotificationTabprops) => {
           sections={DATA}
           showsVerticalScrollIndicator={false}
           keyExtractor={(item, index) => item + index.toString()}
-          renderItem={({item}) => <RenderItems item={item} />}
+          renderItem={({item, index}) => (
+            <RenderItems item={item} index={index} />
+          )}
           renderSectionHeader={({section: {title}}) => (
             <Text style={styles(selectedTheme).header}>{title}</Text>
           )}

@@ -43,6 +43,7 @@ interface Homepageprops {
   setseeall: any;
   isfavourite: any;
   setisfavourite: any;
+  formatedDate: string;
 }
 
 const HomeScreen = (props: Homepageprops) => {
@@ -54,6 +55,7 @@ const HomeScreen = (props: Homepageprops) => {
     setseeall,
     isfavourite,
     setisfavourite,
+    formatedDate,
   } = props;
 
   const animation = new Animated.Value(0);
@@ -95,9 +97,7 @@ const HomeScreen = (props: Homepageprops) => {
             <Text style={styles(selectedTheme).text}>
               {screensData.home.NAME}
             </Text>
-            <Text style={styles(selectedTheme).subText}>
-              {screensData.home.DATE}
-            </Text>
+            <Text style={styles(selectedTheme).subText}>{formatedDate}</Text>
           </View>
           <Animated.View
             onTouchStart={runAnimationOnClick}

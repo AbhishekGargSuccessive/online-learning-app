@@ -21,6 +21,11 @@ const Homemodel = (props: NavigationDataTypes) => {
     courselist2 = DummyData.coursesList2.filter(a => a.id > 3).map(a => a);
   }
 
+  const DateData = new Date();
+
+  const text = String(DateData);
+  let formatedDate = text.slice(0, 15);
+
   return (
     <HomeScreen
       {...{
@@ -31,6 +36,7 @@ const Homemodel = (props: NavigationDataTypes) => {
         setseeall,
         isfavourite,
         setisfavourite,
+        formatedDate,
       }}
     />
   );

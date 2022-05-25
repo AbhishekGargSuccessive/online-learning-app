@@ -10,6 +10,7 @@ const Modals = () => {
         animationType="fade"
         transparent={true}
         visible={modalVisible}
+        testID="onpressModal"
         onRequestClose={() => {
           setModalVisible(!modalVisible);
         }}>
@@ -18,6 +19,7 @@ const Modals = () => {
             <View style={styles.modalView}>
               <Text style={styles.modalText}> this is Modal</Text>
               <Pressable
+                testID="onpress1"
                 style={[styles.button, styles.buttonClose]}
                 onPress={() => setModalVisible(!modalVisible)}>
                 <Text style={styles.textStyle}>Hide Modal</Text>
@@ -35,6 +37,7 @@ const Modals = () => {
         Modal.
       </Text>
       <Pressable
+        testID="onpress2"
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}>
         <Text style={styles.textStyle}>Show Modal</Text>

@@ -27,11 +27,11 @@ const Renderitem = (props: renderprops) => {
         {
           backgroundColor:
             defaultitem == item.label
-              ? selectedTheme.backgroundblueNgreen
+              ? selectedTheme.TRANSPARENTBLACK
               : selectedTheme.backgroundwhite3Ngray8,
           borderColor:
             defaultitem == item.label
-              ? selectedTheme.borderColor1
+              ? selectedTheme.TRANSPARENTBLACK
               : selectedTheme.borderColor1,
         },
       ]}>

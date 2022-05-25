@@ -57,3 +57,11 @@ package-lock.json
 
 # CocoaPods
 /ios/Pods/
+
+# Ignore test-related files
+coverage/
+package-lock.json
+.scannerwork/.sonar_lock
+.scannerwork/report-task.txtc
+.scannerwork/report-task.txt
+*.lock

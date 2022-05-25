@@ -73,7 +73,7 @@ const styles = (selectedTheme: any) =>
       marginVertical: 10,
     },
     mobileImage: {
-      tintColor: selectedTheme.tintColor,
+      // tintColor: selectedTheme.tintColor,
       width: 90,
       height: 90,
       margin: 10,

@@ -32,7 +32,9 @@ const MultiSliders = (props: Sliderprops) => {
       minMarkerOverlapDistance={50}
       customMarker={e => {
         return (
-          <View style={style.container}>
+          <View 
+          testID='test'
+          style={style.container}>
             <View style={style.subcontainer} />
             <Text
               style={{

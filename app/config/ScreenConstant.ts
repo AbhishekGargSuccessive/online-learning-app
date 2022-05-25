@@ -75,6 +75,9 @@ const screensData = {
     I_AM_A: 'I am a',
     LOGIN: 'Login',
   },
+  categories: {
+    CHOOSECATEGORIES: 'Choose Categories',
+  },
 };
 
 const buttons = {

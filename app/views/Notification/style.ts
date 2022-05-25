@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {FONTS, SIZES} from '../../config/Themes';
 
 const styles = (selectedTheme: any) =>
   StyleSheet.create({
@@ -7,7 +8,7 @@ const styles = (selectedTheme: any) =>
       backgroundColor: selectedTheme.backgroundwhiteNgray8,
     },
     bgImage: {
-      height: '40%',
+      height: '36%',
       width: '100%',
       position: 'absolute',
     },
@@ -20,7 +21,7 @@ const styles = (selectedTheme: any) =>
       height: 50,
       width: 50,
       borderRadius: 90,
-      backgroundColor: selectedTheme.backgroundgray10Ngray70,
+      backgroundColor: selectedTheme.backgroundwhiteNgreen,
       justifyContent: 'center',
     },
     headerLeftIcon: {
@@ -32,15 +33,14 @@ const styles = (selectedTheme: any) =>
     },
     headerText: {
       color: selectedTheme.textblackNwhite,
-      fontSize: 18,
-      fontWeight: '700',
+      fontSize: 20,
       textAlignVertical: 'center',
       marginVertical: 20,
+      ...FONTS.heading,
     },
     item: {
       flexDirection: 'row',
-
-      borderRadius: 10,
+      borderRadius: SIZES.radius,
       marginVertical: 5,
     },
     image: {
@@ -51,16 +51,20 @@ const styles = (selectedTheme: any) =>
       resizeMode: 'contain',
     },
     header: {
-      fontSize: 18,
+      fontSize: 16,
       color: selectedTheme.textgray8Ngray4,
+      ...FONTS.body,
+      marginVertical:10
     },
     title: {
-      fontSize: 18,
+      fontSize: 16,
       color: selectedTheme.textblackNwhite,
+      ...FONTS.heading,
     },
     subTitle: {
       width: 200,
-      color: selectedTheme.textblackNgray4,
+      color: selectedTheme.TRANSPARENTBLACK,
+      ...FONTS.body,
     },
     time: {
       color: selectedTheme.textblackNgray4,
@@ -72,8 +76,8 @@ const styles = (selectedTheme: any) =>
     },
     seperator: {
       borderBottomWidth: 0.5,
-      borderColor: selectedTheme.borderColor2,
       marginVertical: 20,
+      borderColor: selectedTheme.lineDivider,
     },
     itemTextContainer: {
       marginLeft: 10,

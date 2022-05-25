@@ -146,7 +146,7 @@ const styles = (selectedTheme: any) =>
       color: selectedTheme.textblackNwhite,
     },
     itemSeperator: {
-      borderBottomWidth: 2,
+      borderBottomWidth: 1,
       marginVertical: 20,
       borderColor: selectedTheme.lineDivider,
     },

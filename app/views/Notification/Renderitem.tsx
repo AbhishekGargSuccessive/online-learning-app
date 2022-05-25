@@ -11,10 +11,11 @@ interface renderItem {
     created_at: string;
     message: string;
   };
+  index: number;
 }
 
 const RenderItems = (props: renderItem) => {
-  const {item} = props;
+  const {item, index} = props;
   return (
     <View>
       <View style={styles(selectedTheme).item}>
@@ -27,7 +28,9 @@ const RenderItems = (props: renderItem) => {
           <Text style={styles(selectedTheme).subTitle}>{item.message}</Text>
         </View>
       </View>
-      <View style={styles(selectedTheme).seperator} />
+      {item.id != 3 && item.id != 5 && (
+        <View style={styles(selectedTheme).seperator} />
+      )}
     </View>
   );
 };

@@ -112,7 +112,7 @@ const CourseListingScreen = (props: Corselistingprops) => {
           <View style={styles(selectedTheme).headerSub}>
             <Text style={styles(selectedTheme).headerText}>{Header}</Text>
             <Image
-              source={Icon.MOBILE}
+              source={Images.MOBILE_IMAGE}
               style={styles(selectedTheme).mobileImage}
             />
           </View>
