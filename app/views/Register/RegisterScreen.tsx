@@ -18,21 +18,19 @@ interface Registerprops {
   navigation: any;
   visible: boolean;
   setvisibe: React.Dispatch<React.SetStateAction<boolean>>;
-  selected: any;
-  setselected: any;
   isvalidEmail: boolean;
   isvalidPassword: boolean;
   isvalidusername: boolean;
   Emailinpute: (text: string) => void;
   EnterPassword: (text: string) => void;
   EnterUserName: (text: string) => void;
-  submit: any;
+  submit:  () => void;
   register: {
     id: number;
     label: string;
   }[];
-  defaultitem: any;
-  setdefaultitem: any;
+  defaultitem: number;
+  setdefaultitem: React.Dispatch<React.SetStateAction<number>>
   GoogleSignin: () => Promise<void>;
   Facebooklogin: () => void;
 }
@@ -42,8 +40,6 @@ const RegisterScreen = (props: Registerprops) => {
     navigation,
     visible,
     setvisibe,
-    selected,
-    setselected,
     isvalidEmail,
     isvalidPassword,
     isvalidusername,
@@ -84,6 +80,7 @@ const RegisterScreen = (props: Registerprops) => {
           {register.map((item, index) => {
             return (
               <NEWButton
+              testID="newButton"
                 key={index}
                 onPress={() => {
                   setdefaultitem(item.id), runAnimationOnClick();
@@ -188,6 +185,7 @@ const RegisterScreen = (props: Registerprops) => {
                 onChangeText={EnterPassword}
               />
               <TouchableOpacity
+              testID='eyeButton'
                 style={styles(selectedTheme).eyeContainer}
                 onPress={() => (visible ? setvisibe(false) : setvisibe(true))}>
                 <Image
@@ -204,6 +202,7 @@ const RegisterScreen = (props: Registerprops) => {
           </View>
 
           <TouchableOpacity
+          testID='submitButton'
             style={styles(selectedTheme).button}
             onPress={submit}>
             <Text style={styles(selectedTheme).buttonText}>
@@ -217,6 +216,7 @@ const RegisterScreen = (props: Registerprops) => {
 
           <View style={styles(selectedTheme).socialButtonContainer}>
             <TouchableOpacity
+            testID='googleButton'
               style={styles(selectedTheme).socialButton}
               onPress={() => GoogleSignin()}>
               <Image source={Icon.GOOGLE} style={styles(selectedTheme).icon} />
@@ -226,6 +226,7 @@ const RegisterScreen = (props: Registerprops) => {
             </TouchableOpacity>
 
             <TouchableOpacity
+            testID='facebookButton'
               style={styles(selectedTheme).socialButton}
               onPress={() => Facebooklogin()}>
               <Image
@@ -244,6 +245,8 @@ const RegisterScreen = (props: Registerprops) => {
             </Text>
 
             <TouchableOpacity
+             
+             testID='navigate'
               onPress={() => navigation.navigate(RouteScreens.LOGINMODEL)}>
               <Text style={styles(selectedTheme).loginText}>
                 {screensData.register.LOGIN}

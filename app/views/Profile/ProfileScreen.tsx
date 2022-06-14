@@ -50,7 +50,8 @@ const ProfileScreen = (props: profileprops) => {
           <Text style={styles(selectedTheme).headerText}>
             {screensData.Profile.NAME}
           </Text>
-          <TouchableOpacity
+          <TouchableOpacity 
+          testID='renderButton'
             onPress={() => {
               setrender(!render), changeTheme(), dispachcall();
             }}>
@@ -66,6 +67,7 @@ const ProfileScreen = (props: profileprops) => {
           <View style={styles(selectedTheme).subContainer}>
             <View style={{flexDirection: 'row'}}>
               <TouchableOpacity
+                testID='openModal'
                 style={styles(selectedTheme).imageContainer}
                 onPress={() => setModalVisible(true)}>
                 <Image
@@ -104,6 +106,7 @@ const ProfileScreen = (props: profileprops) => {
             </View>
             <View>
               <TouchableOpacity
+              testID='navigationButton'
                 style={styles(selectedTheme).learnButton}
                 onPress={() => navigation.navigate('MembershipModel')}>
                 <Text style={styles(selectedTheme).learnButtonText}>
@@ -191,7 +194,8 @@ const ProfileScreen = (props: profileprops) => {
             })}
           </View>
         </ScrollView>
-        <Modal
+        <Modal 
+        testID='ModalComponent'
           animationType="slide"
           transparent={true}
           visible={modalVisible}
@@ -199,12 +203,16 @@ const ProfileScreen = (props: profileprops) => {
             setModalVisible(!modalVisible);
           }}>
           <TouchableWithoutFeedback
+
+          testID='modalVisibleButton'
             onPress={() => setModalVisible(!modalVisible)}>
             <View style={styles(selectedTheme).drawerContainer} />
           </TouchableWithoutFeedback>
 
           <View style={styles(selectedTheme).modalView}>
-            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+            <TouchableOpacity 
+            testID='CrossButton'
+            onPress={() => setModalVisible(!modalVisible)}>
               <Image
                 source={Icon.CROSS}
                 style={styles(selectedTheme).modalIcon}
@@ -214,7 +222,9 @@ const ProfileScreen = (props: profileprops) => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => openCamara()}>
+            <TouchableOpacity 
+            testID='openCameraButton'
+            onPress={() => openCamara()}>
               <Image
                 source={Icon.CAMERA}
                 style={styles(selectedTheme).modalIcon}
@@ -224,7 +234,8 @@ const ProfileScreen = (props: profileprops) => {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => launchLibrary()}>
+            <TouchableOpacity  
+            testID='lanchLibButton' onPress={() => launchLibrary()}>
               <Image
                 source={Icon.GALLERY}
                 style={styles(selectedTheme).modalIcon}

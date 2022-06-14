@@ -1,20 +1,20 @@
 import React from 'react';
 import {cleanup, render, fireEvent} from '@testing-library/react-native';
-import {MultiProgress} from '../app/components';
+import {Input} from '../app/components';
 
 afterEach(cleanup);
 const prop = {
-  containerstyle: 'string',
+  inputplaceholder: 'TestValue',
 };
 
 afterEach(cleanup);
 
-const MultiProgressProp = prop => render(<MultiProgress {...prop} />);
+const rendersScreen = prop => render(<Input {...prop} />);
 
-describe('MultiProgress test case', () => {
+describe('Input test case', () => {
   afterEach(cleanup);
   it('To render screen with prop', async () => {
-    const resultTest = MultiProgressProp(prop);
+    const resultTest = rendersScreen(prop);
     expect(resultTest).toBeTruthy();
   });
 });

@@ -42,6 +42,7 @@ const CourseScreen = (props: coursescreenprops) => {
             style={styles(selectedTheme).imageBackgraound}>
             <View style={styles(selectedTheme).headerContainer}>
               <TouchableOpacity
+              testID='goBackButton'
                 style={styles(selectedTheme).iconBack}
                 onPress={() => navigation.goBack()}>
                 <Image source={Icon.BACK} style={styles(selectedTheme).icons} />
@@ -63,6 +64,7 @@ const CourseScreen = (props: coursescreenprops) => {
             </View>
             <View style={styles(selectedTheme).container}>
               <TouchableOpacity
+              testID='playButton'
                 style={styles(selectedTheme).playButton}
                 onPress={() => setplayvideo(false)}>
                 <Image source={Icon.PLAY} style={styles(selectedTheme).icons} />
@@ -77,6 +79,7 @@ const CourseScreen = (props: coursescreenprops) => {
                 styles(selectedTheme).color,
               ]}>
               <TouchableOpacity
+
                 style={styles(selectedTheme).iconBack}
                 onPress={() => navigation.goBack()}>
                 <Image source={Icon.BACK} style={styles(selectedTheme).icons} />
@@ -97,6 +100,7 @@ const CourseScreen = (props: coursescreenprops) => {
               </View>
             </View>
             <Video
+              testID='videoButton'
               source={{
                 uri: Constant.videoUrl,
               }}
@@ -114,6 +118,7 @@ const CourseScreen = (props: coursescreenprops) => {
           return (
             <TouchableOpacity
               key={index}
+              testID='courseItemButton'
               onPress={() => setdefaultitem(item.id)}
               style={[
                 styles(selectedTheme).button,

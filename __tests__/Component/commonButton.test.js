@@ -5,23 +5,23 @@ import {CommonButton} from '../app/components';
 afterEach(cleanup);
 
 const prop = {
-  title: 'test',
+  title: 'TestTitle',
   press: jest.fn,
 };
 
 afterEach(cleanup);
 
-const CommonButtonProp = props => render(<CommonButton {...props} />);
+const renderScreen = props => render(<CommonButton {...props} />);
 
 describe('Success test case for Common Button', () => {
   afterEach(cleanup);
   it('To render screen with prop', async () => {
-    const renderScreenwithResult = CommonButtonProp(prop);
+    const renderScreenwithResult = renderScreen(prop);
     expect(renderScreenwithResult).toBeTruthy();
   });
 
   it('To render screen when button click', async () => {
-    const renderScreenwithResult = CommonButtonProp();
+    const renderScreenwithResult = renderScreen(prop);
     const button = await renderScreenwithResult.findByTestId('onpress');
     fireEvent.press(button);
     expect(renderScreenwithResult).toBeTruthy();

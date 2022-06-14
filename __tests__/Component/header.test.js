@@ -1,20 +1,20 @@
 import React from 'react';
 import {cleanup, render, fireEvent} from '@testing-library/react-native';
-import {Input} from '../app/components';
+import {Header} from '../app/components';
 
 afterEach(cleanup);
 const prop = {
-  inputplaceholder: 'string',
+  headertitle: 'string',
 };
 
 afterEach(cleanup);
 
-const InputComponent = prop => render(<Input {...prop} />);
+const renderScreen = prop => render(<Header {...prop} />);
 
-describe('Input test case', () => {
+describe('header test case', () => {
   afterEach(cleanup);
   it('To render screen with prop', async () => {
-    const resultTest = InputComponent(prop);
+    const resultTest = renderScreen(prop);
     expect(resultTest).toBeTruthy();
   });
 });

@@ -66,6 +66,7 @@ const LoginScreen = (props: loginpageprops) => {
           </Text>
           <View style={styles(selectedTheme).inputContainer}>
             <TextInput
+            testID='emailInput'
               keyboardType={'email-address'}
               onChangeText={Emailinpute}
               style={styles(selectedTheme).inputText}
@@ -81,11 +82,13 @@ const LoginScreen = (props: loginpageprops) => {
           <Text style={styles(selectedTheme).formText}>{form.PASSSWORD}</Text>
           <View style={styles(selectedTheme).inputContainer}>
             <TextInput
+            testID='passwordInput'
               style={styles(selectedTheme).inputText}
               secureTextEntry={!visible}
               onChangeText={EnterPassword}
             />
             <TouchableOpacity
+            testID='eyebutton'
               style={styles(selectedTheme).eyeContainer}
               onPress={() => (visible ? setvisibe(false) : setvisibe(true))}>
               <Image
@@ -101,7 +104,9 @@ const LoginScreen = (props: loginpageprops) => {
           ) : null}
         </View>
 
-        <TouchableOpacity style={styles(selectedTheme).button} onPress={submit}>
+        <TouchableOpacity 
+        testID='submitButtonClick'
+         style={styles(selectedTheme).button} onPress={submit}>
           <Text style={styles(selectedTheme).buttonText}>{buttons.LOGIN}</Text>
         </TouchableOpacity>
 
@@ -111,6 +116,7 @@ const LoginScreen = (props: loginpageprops) => {
 
         <View style={styles(selectedTheme).socialButtonContainer}>
           <TouchableOpacity
+          testID='SignInButton'
             style={styles(selectedTheme).socialButton}
             onPress={() => signIn()}>
             <Image source={Icon.GOOGLE} style={styles(selectedTheme).icon} />
@@ -120,6 +126,7 @@ const LoginScreen = (props: loginpageprops) => {
           </TouchableOpacity>
 
           <TouchableOpacity
+          testID='facebooklogin'
             onPress={() => Facebooklogin()}
             style={styles(selectedTheme).socialButton}>
             <Image source={Icon.FACEBOOK} style={styles(selectedTheme).icon} />
@@ -135,6 +142,7 @@ const LoginScreen = (props: loginpageprops) => {
           </Text>
 
           <TouchableOpacity
+          testID='navigate'
             onPress={() => navigation.navigate(RouteScreens.REGISTERMODEL)}>
             <Text style={styles(selectedTheme).signupText}>
               {buttons.SIGNUPNOW}

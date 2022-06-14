@@ -9,12 +9,12 @@ const prop = {
 
 afterEach(cleanup);
 
-const LabelComponent = prop => render(<Label {...prop} />);
+const renderScreen = prop => render(<Label {...prop} />);
 
 describe('Label test case', () => {
   afterEach(cleanup);
   it('To render screen with prop', async () => {
-    const resultTest = LabelComponent(prop);
+    const resultTest = renderScreen(prop);
     expect(resultTest).toBeTruthy();
   });
 });

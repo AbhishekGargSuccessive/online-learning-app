@@ -65,7 +65,9 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
     <SafeAreaView style={styles(selectedTheme).mainContainer}>
       <View style={styles(selectedTheme).headContentContainer}>
         <View style={styles(selectedTheme).header}>
-          <TouchableOpacity
+          <TouchableOpacity 
+
+           testID='backButton'
             style={styles(selectedTheme).leftButton}
             onPress={() => navigation.goBack()}>
             <Image
@@ -150,7 +152,7 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
             {data.map((item, index) => {
               return (
                 <View key={index}>
-                  {index < 4 ? (
+                  {index < 4  && 
                     <RenderItem
                       navigation={navigation}
                       item={item}
@@ -158,7 +160,7 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
                       isfavourite={isfavourite}
                       setisfavourite={setisfavourite}
                     />
-                  ) : null}
+                  }
                 </View>
               );
             })}
@@ -259,6 +261,8 @@ const InstructorProfileScreen = (props: InstrctorProfileScreenprops) => {
             {socialConnection.map((item, index) => {
               return (
                 <TouchableOpacity
+
+                testID='socialButton'
                   key={index}
                   style={styles(selectedTheme).socialbutton}
                   onPress={() => Linking.openURL(item.Link)}>

@@ -10,7 +10,7 @@ const ModalProp = props => render(<Modals {...props} />);
 describe('Success test case for Modal', () => {
   afterEach(cleanup);
   it('To render screen with prop', async () => {
-    const resultTest = ModalProp(props);
+    const resultTest = ModalProp();
     expect(resultTest).toBeTruthy();
   });
   it('To render screen with button click', async () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {cleanup, render, fireEvent} from '@testing-library/react-native';
-import {CircularProgress} from '../app/components';
+import {CircularProgress} from '../../app/components';
 
 afterEach(cleanup);
 const prop = {
@@ -13,16 +13,16 @@ const prop2 = {
   };
 afterEach(cleanup);
 
-const CircularProgressProps = prop => render(<CircularProgress {...prop} />);
+const renderScreen = prop => render(<CircularProgress {...prop} />);
 
-describe('CircularProgress test case', () => {
+describe('CircularProgress test casees', () => {
   afterEach(cleanup);
   it('To render screen with prop', async () => {
-    const resultTest = CircularProgressProps(prop);
+    const resultTest = renderScreen(prop);
     expect(resultTest).toBeTruthy();
   });
   it('To render screen with prop2', async () => {
-    const resultTest = CircularProgressProps(prop2);
+    const resultTest = renderScreen(prop2);
     expect(resultTest).toBeTruthy();
   });
 });

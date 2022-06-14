@@ -13,7 +13,6 @@ const RegistrModel = (props: NavigationDataTypes) => {
   const {navigation} = props;
 
   const [visible, setvisibe] = useState(false);
-  const [selected, setselected] = useState(false);
   const [Email, setEmail] = useState('');
   const [password, setpassword] = useState('');
   const [Username, setUsername] = useState('');
@@ -47,8 +46,6 @@ const RegistrModel = (props: NavigationDataTypes) => {
         navigation,
         visible,
         setvisibe,
-        selected,
-        setselected,
         isvalidEmail,
         isvalidPassword,
         isvalidusername: isvalidUsername,
