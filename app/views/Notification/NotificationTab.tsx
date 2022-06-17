@@ -36,6 +36,7 @@ const NotificationTab = (props: NotificationTabprops) => {
       />
       <View style={styles(selectedTheme).container}>
         <TouchableOpacity
+        testID='gobackButton'
           onPress={() => navigation.goBack()}
           style={styles(selectedTheme).leftButton}>
           <Image

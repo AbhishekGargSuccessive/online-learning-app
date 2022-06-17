@@ -77,8 +77,10 @@ const SearchScreen = (props: SearchScreenProps) => {
             value={searchText}
             placeholderTextColor={selectedTheme.textgray8Ngray4}
           />
-          {isSearch ? (
+          {isSearch && 
             <TouchableOpacity
+
+            testID='resetButton'
               onPress={() => {
                 setisSearch(false), resetsearch(Text);
               }}>
@@ -87,7 +89,7 @@ const SearchScreen = (props: SearchScreenProps) => {
                 style={[styles(selectedTheme).searchBarImage]}
               />
             </TouchableOpacity>
-          ) : null}
+           }
         </View>
 
         {!isSearch ? (
@@ -143,8 +145,7 @@ const SearchScreen = (props: SearchScreenProps) => {
                 item={item}
                 isfavourite={isfavourite}
                 setisfavourite={setisfavourite}
-                navigation={navigation}
-              />
+                navigation={navigation} index={0}              />
             )}
           />
         )}

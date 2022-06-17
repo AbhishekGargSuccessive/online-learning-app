@@ -29,6 +29,7 @@ const MembershipScreen = (props: CategoryProps) => {
       <View style={styles(selectedTheme).headContentContainer}>
         <View style={styles(selectedTheme).header}>
           <TouchableOpacity
+          testID='backButtonclick'
             style={styles(selectedTheme).leftButton}
             onPress={() => navigation.goBack()}>
             <Image
@@ -68,6 +69,7 @@ const MembershipScreen = (props: CategoryProps) => {
           />
 
           <TouchableOpacity
+          testID='rootTabButton'
             style={styles(selectedTheme).button}
             onPress={() => navigation.navigate(RouteScreens.ROOTTAB)}>
             <Text style={styles(selectedTheme).buttonText}>

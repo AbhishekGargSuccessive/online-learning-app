@@ -20,6 +20,7 @@ const Renderitem = (props: renderprops) => {
   const {item, defaultitem, setdefaultitem} = props;
   return (
     <Pressable
+    testID='testItemButton'
       onPress={() => setdefaultitem(item.id)}
       style={[
         styles(selectedTheme).item,
