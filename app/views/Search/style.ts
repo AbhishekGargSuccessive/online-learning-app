@@ -28,8 +28,8 @@ const styles = (selectedTheme: any) =>
       justifyContent: 'center',
     },
     headerLeftIcon: {
-      height: 25,
-      width: 25,
+      height: 24,
+      width: 24,
       resizeMode: 'contain',
       alignSelf: 'center',
       tintColor: selectedTheme.textblackNgray3,
@@ -68,7 +68,7 @@ const styles = (selectedTheme: any) =>
       fontSize: 20,
       marginVertical: 20,
       color: selectedTheme.textblackNgray,
-      ...FONTS.heading
+      ...FONTS.heading,
     },
     flatlistContainer: {
       marginVertical: 20,
@@ -101,6 +101,9 @@ const styles = (selectedTheme: any) =>
       flex: 1,
       flexDirection: 'row',
       marginTop: 5,
+    },
+    noDataFoundText: {
+      color: selectedTheme.textgray8Ngray4,
     },
   });
 

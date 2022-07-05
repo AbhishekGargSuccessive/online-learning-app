@@ -56,7 +56,12 @@ const SearchScreen = (props: SearchScreenProps) => {
   } = props;
 
   const handleEmpty = () => {
-    return <Text> {screensData.search.NO_DATA_PRESENT}</Text>;
+    return (
+      <Text style={styles(selectedTheme).noDataFoundText}>
+        {' '}
+        {screensData.search.NO_DATA_PRESENT}
+      </Text>
+    );
   };
 
   return (
@@ -71,7 +76,12 @@ const SearchScreen = (props: SearchScreenProps) => {
           </TouchableOpacity>
 
           <TextInput
-            style={[{width: !isSearch ? '100%' : '85%'}]}
+            style={[
+              {
+                width: !isSearch ? '100%' : '85%',
+                color: selectedTheme.textgray8Ngray4,
+              },
+            ]}
             onChangeText={SearchTexthandler}
             placeholder={screensData.search.PLACEHOLDER}
             value={searchText}
@@ -134,16 +144,18 @@ const SearchScreen = (props: SearchScreenProps) => {
           </View>
         ) : (
           <FlatList
+            style={{marginTop: 20}}
             data={DATA}
             showsVerticalScrollIndicator={false}
             ListEmptyComponent={handleEmpty}
             keyExtractor={(item, index) => item + index.toString()}
-            renderItem={({item}) => (
+            renderItem={({item, index}) => (
               <RenderItem
                 item={item}
                 isfavourite={isfavourite}
                 setisfavourite={setisfavourite}
                 navigation={navigation}
+                index={index}
               />
             )}
           />
